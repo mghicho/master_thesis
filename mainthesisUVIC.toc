@@ -1,0 +1,45 @@
+\contentsline {chapter}{Supervisory Committee}{ii}
+\contentsline {chapter}{Abstract}{iii}
+\contentsline {chapter}{Table of Contents}{iv}
+\contentsline {chapter}{List of Tables}{vi}
+\contentsline {chapter}{List of Figures}{vii}
+\contentsline {chapter}{Acknowledgements}{viii}
+\contentsline {chapter}{Dedication}{ix}
+\contentsline {chapter}{\numberline {1}Introduction}{1}
+\contentsline {section}{\numberline {1.1}My Claims}{1}
+\contentsline {subsection}{\numberline {1.1.1}The Importance of My Claims}{2}
+\contentsline {section}{\numberline {1.2}Agenda}{3}
+\contentsline {chapter}{\numberline {2}The Problem to be Solved}{4}
+\contentsline {chapter}{\numberline {3}Single Hop Transmission}{5}
+\contentsline {section}{\numberline {3.1}802.11ah Standrad}{6}
+\contentsline {subsection}{\numberline {3.1.1}Physical Layer of 802.11ah}{6}
+\contentsline {subsection}{\numberline {3.1.2}MAC layer of 802.11ah}{6}
+\contentsline {section}{\numberline {3.2}The Hidden Terminal Problem}{7}
+\contentsline {section}{\numberline {3.3}Related Works}{9}
+\contentsline {section}{\numberline {3.4}Rss-Based Grouping Strategy}{10}
+\contentsline {subsection}{\numberline {3.4.1}Motivation}{10}
+\contentsline {subsection}{\numberline {3.4.2}System Model}{10}
+\contentsline {subsection}{\numberline {3.4.3}RSS-Based Grouping}{11}
+\contentsline {subsection}{\numberline {3.4.4}Implementation Issues}{13}
+\contentsline {subsection}{\numberline {3.4.5}Analytical Model}{14}
+\contentsline {chapter}{\numberline {4}Multi-Hop Transmission}{18}
+\contentsline {section}{\numberline {4.1}Physical Layer Network Coding}{18}
+\contentsline {section}{\numberline {4.2}Implementation}{18}
+\contentsline {subsection}{\numberline {4.2.1}Signal formulation}{19}
+\contentsline {subsection}{\numberline {4.2.2}Timing recovery}{20}
+\contentsline {subsection}{\numberline {4.2.3}MA receiver, CFO estimation}{20}
+\contentsline {subsection}{\numberline {4.2.4}MA receiver, preamble detection}{22}
+\contentsline {chapter}{\numberline {5}Experiments, Evaluation and Comparisons}{24}
+\contentsline {section}{\numberline {5.1}rss - based evaluations}{24}
+\contentsline {section}{\numberline {5.2}PNC evaluations}{27}
+\contentsline {subsection}{\numberline {5.2.1}Testbed Experiments}{28}
+\contentsline {subsubsection}{Experiment setting}{28}
+\contentsline {subsection}{\numberline {5.2.2}BER, two-hop}{28}
+\contentsline {subsubsection}{Multi-hop performance}{30}
+\contentsline {subsection}{\numberline {5.2.3}Simulation Results}{31}
+\contentsline {subsubsection}{Different number of hops}{31}
+\contentsline {subsubsection}{Goodput performance comparison}{32}
+\contentsline {subsubsection}{Effect of CFO on BER}{34}
+\contentsline {subsubsection}{Effect of Channel Estimation Error on BER}{34}
+\contentsline {chapter}{\numberline {6}Conclusions}{35}
+\contentsline {chapter}{Bibliography}{36}

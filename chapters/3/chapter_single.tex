@@ -2,10 +2,25 @@
 \label{chapter:single}
 
 This is chapter expalins the rss-grouping work.
+
+There has been a massive increase in the number of nodes connected to an Access Point (AP) in a Wireless Local Area Network (WLAN) in recent years. Technologies such as Internet of Things (IoT), sensor networks and Machine Type Communication (MTC) are anticipated to bring an even larger number of nodes all contending to access the license-free Industrial, Scientific, and Medical (ISM) bandwidth. This is part of the reason that the next generation of IEEE 802.11 standards includes a new sub 1GHz bandwidth to ISM in order to cover the IoT traffic \cite{Req80211ah}. But the number of connections from both MTC and human devices increases so fast that using conventional IEEE 802.11 MAC protocol's Distributed Coordination Function (DCF) to handle such a large number of nodes results in a high collision probability and very low channel efficiency.
+
+Research efforts have been put to make super dense IEEE 802.11 networks more efficient. In addition to physical layer solutions trying to make wireless communications more efficient and faster, a key issue is how to modify the DCF protocol in the MAC layer to achieve better resource utilization. For instance, \cite{zhong2014dcf} proposed a method to adjust the transmission opportunity according to collision probability. One promising solution is grouping users and limiting the competitions within the group, used in Group Synchronized Distributed Coordination Function in the IEEE 802.11ah standard \cite{Draft80211ah}. It has been proved in \cite{zheng2014performance} and \cite{raeesi2014performance} that grouping users and dedicating a Restricted Access Window (RAW) to each group increases the overall throughput in wireless networks. \iffalse CHECK THIS \fi The work at \cite{kim2015optimal} has also addressed the problem of super dense networks and proposed a grouping scheme based on transmission attempts to assign larger RAWs to crowder groups instead of having equally timed RAWs. 
+
+
 \section{802.11ah Standrad}
  Explain what 802.11ah is.
 
- The 802.11ah protocol is one of the recent standards by IEEE organization. This standard introduces many new concepts for the first time, including new designs for both physical and MAC layer. In the physical layer take advantage of the new sub 1GHz ISM bandwidth and the MAC layer introduces the concept of Group Synchronized Distributed Coordination Function (GS-DCF) to be used instead of the traditional DCF.   
+ The 802.11ah protocol is one of the recent standards by IEEE organization. This standard introduces many new concepts for the first time, including new designs for both physical and MAC layer. The 802.11ah standard has been designed with three use cases in mind, smart sensors, back-haul aggregation and extended range hot-spot. In smart sensor use case, 802.11ah is designed to handle a very large number of nodes(up to 6000) connected to one access point. In the back-haul use case, an 802.11ah access point is designed to be used as an aggregator for wireless personal area network(WPAN) devices that use IEEE 802.15.4.g standard. WPAN(802.15.4g) devices have small transmission range and data rate, so in this case, 802.15.4g routers, gather data from 802.15.4g devices and send them to a single 802.11ah aggregator. In the extended hot-spot use case, 802.11ah access points can be used as cellular offloading candidates specially in outdoor environment where other .11 standards suffer from their short range.
+
+\subsection{Physical Layer of 802.11ah}
+In the Physical Layer(PHY), 802.11ah makes use of sub 1GHz license-exempt bands. This is the main physical layer difference between this standard and previous .11 standards. Also, 802.11ah mostly focuses on small bandwidths and does not allow >20 MHz bands. The use of smaller carrier frequency also gives 802.11ah a much larger transmission range compared to other .11 standards. In outdoor scenarios, using default transmission power(200mW), 1MHz channel and Modulation and Coding Scheme(MCS) 10, it can achieve a range as high as 1 km.   
+
+\subsection{MAC layer of 802.11ah}
+ In the MAC layer 802.11ah introduces may new concepts from frame formats to channel access and power management. In the main 802.11 standard, number of nodes that can be connected to one access point is limited to 2007. 802.11ah extends this range to 8191 nodes to support the smart sensor use case. Also to better support dense network scenarios, 802.11ah shortens the length of frame headers, control frames such as ACKs and periodically transmitted frames such as beacons. The main change in 802.11ah which is also the focus of this paper are changes in the channel access. 
+
+ In order to handle the large contention between nodes in dense scenarios, 802.11ah divides all nodes connected the access point into different groups, each is then given a specified time window called Restricted Access Window(RAW) to use the channel while members of all other groups remain silent. This also divides the beacon period into multiple RAWs each dedicated to one group. This not only decreases the contention that one node experiences while using the wireless channel, also lets nodes save power by going to sleep in RAW that do not belong to them. It is left to the access point to decide whether or not  to allow nodes to cross the RAW boundary just to finish an ongoing transmission(Cross Slot Boundary). This channel access mechanism is called Group Synchronized Distributed Coordination Function (GS-DCF) which is to be used instead of the traditional DCF.   
+
 \section{The Hidden Terminal Problem}
 
 Explain what hidden terminal problem is.
@@ -40,28 +55,20 @@ When the AP can obtain the global information about the location of all nodes, e
 However, when the number of terminals is large, collecting global information significantly increases the overhead of feedback. Assigning all of the nodes to their groups results in a high control overhead especially when the network is dynamic.
 
 
-\section{System Model} \label{systemmodel}
-
-In this work, we consider an infrastructure based IEEE 802.11ah network, where each wireless terminal transmits its packets directly to the access point. %For simplicity, we only consider upload traffic from nodes to the access point, same as the in \cite{wu2006wsn02}. 
-The network coverage area is a circle with radius $R$ where the access point is at the center. Nodes are uniformly distributed in the circle and their locations follow a Poisson Point Process (PPP) with density $\lambda$. The latter two assumptions are used for analysis and they are not necessary for the algorithm to perform. Nodes are assumed to be static at their position which is a reasonable assumption for most IoT and sensor networks and an active node always has a packet to transmit. %Active nodes are assumed to have saturated traffic. % which means every node has always a packet to transmit.
-
-The channel model used in the analysis is a pathloss model with parameters $\alpha$ and $\beta$ in a way that the received power at a distance $d$ from the transmitter node is
-\begin{equation}
-P_r(d)=\frac{\beta}{d^\alpha} P_t,
-\end{equation}
-where $P_t$ is transmit power. In the simulation, we also consider the Rayleigh fast-fading and log-normal shadowing model where the received power is an exponential random variable and its mean $\bar{\gamma}$ is a log-normal random variable as 
-\begin{equation}
-\bar{\gamma}_{dB}= \mathcal{N}(10\log_{10}(P_r(d)),\sigma).
-\end{equation}
-
-%From a statistical geometric point of view, distance distribution of nodes in the same group is identical in all the schemes that are not location-based and nodes are uniformly distributed in a circle of size $A$. Therefore in this paper
-We refer to both centralized and distributed schemes used in \cite{zheng2014performance} as random grouping schemes. We also do not distinguish between RAW slot crossing and not crossing cases known as CR-GS-DCF and NCR-GS-DCF respectively which has negligible impact on the grouping decision \cite{Draft80211ah}. 
-
-
 \section{Rss-Based Grouping Strategy}
 
-\subsection{motivation}
-explain the problem. maybe a little more that the prblem chapter. something that makes the begining of \ref{rssbasedmain} more clear. maybe more about different ways of solving this problem.
+\subsection{Motivation}
+
+Although using GS-DCF function proposed in IEEE 802.11ah can improve final throughput compared to conventional IEEE 802.11 protocols, there are still some open issues resulting from the new sub 1GHz license-exempt bands in IEEE 802.11ah. Utilizing carrier frequencies smaller than $1$ GHz can increase network coverage up to $1$ km. This large distance makes the well-known hidden terminal problem more serious. As shown in \iffalse CHECK THIS \fi \cite{wu2006wsn02,tsertou2008revisiting,khurana1999performance}, the hidden terminal problem can lead to a substantial performance degradation in infrastructure-based networks. 
+
+Although RTS/CTS and centralized grouping strategy have been proposed to address the hidden terminal problem \cite{yoonregrouping,tseng2014effective}, they are not suitable for IoT scenarios with small packet size and large number of nodes.
+
+ %\cite{tsertou2008revisiting} and \cite{khurana1999performance} have also suggested models which consider the hidden terminal and show the performance degradation. 
+
+  Based on the grouping idea in the IEEE 802.11ah standard, this chapter aims to solve the problem in a distributed manner without using RTS/CTS. Our solution ensures that nodes in the same group are close enough to each other so that they can always sense each other's transmission in their own RAW. 
+
+Different from the previous approaches, this thesis proposes an RSS-based grouping scheme.
+Nodes sense the received power from other nodes and join the group that has the largest sensed power. To the best of our knowledge, this is the first work to explicitly use signal strength for assigning nodes to their groups. The performance gain of the proposed method is then evaluated by analytical model and simulations. \iffalse CHECK THIS \fi The main contributions of this paper are three-fold. First, we propose an RSS-based grouping strategy to solve the hidden terminal problem in IEEE 802.11ah networks. Second, we derive the probability of two nodes in one group being able to sense each other. Third, extensive simulations using NS-2\cite{breslau2000advances} have been conducted, and the results show that, by using the proposed method, the hidden terminal problem becomes negligible in IEEE 802.11ah networks and RTS/CTS is no longer needed.
 
 
 \subsection{System Model} \label{systemmodel}
