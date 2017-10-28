@@ -1,7 +1,6 @@
 \startchapter{Experiments, Evaluation and Comparisons}
 \label{chapter:eval}
-
-talk in general about the evaluation, methods used and explain what's comming in next sections
+This chapter presents results of the simulations and experiments done to evaluate the proposed solutions in both single and multi-hop transmission chapters. In order to gain confidence in the final results and eliminate the unwanted errors, all parameters are measured with extensive iterations and averaging. Wherever possible, comparisons have been made with other widely used algorithms to better illustrate the contribution of this thesis. 
 
 \section{RSS-Based Grouping Strategy}
 
@@ -131,13 +130,12 @@ CW max & 1023 \\
 
 
 \section{PNC evaluations}
-
-a section to discuss resutls of pnc impelemntation
+This section, presents the simulation and experimental results for the PNC transmission. Since the real gain of PNC can been seen in multi-hop transmissions, the same implementation is used for measuring performance parameters in a Multi-hop Physical Layer Network Coding(MPNC). The main MPNC network design used for multi-hop experiments is adopted from \cite{zhang2017cross}. Then using asynchronous experiments the same two hop performance parameters are measured for multi-hop PNC too. 
 
 \subsection{Testbed Experiments}
 
 \subsubsection{Experiment setting}
-USRP N210 sets with XCVR2450 daughterboards are used to run the MPNC experiments. The software used to develop MPNC is GNURadio. The transmission gain of transmitting USRPs is set to $18$~dB and the receiver gain of receiving USRPs is set  to $5$~dB. %The distance between devices is 35Cm and 
+USRP N210 sets with XCVR2450 daughterboards are used to run the PNC experiments. The software used to develop PNC is GNURadio. The transmission gain of transmitting USRPs is set to $18$~dB and the receiver gain of receiving USRPs is set  to $5$~dB. %The distance between devices is 35Cm and 
 The carrier frequency is chosen as $2.45$~GHz. The length of the Sync preamble is $64$ symbols and the $SpS$ used in the experiments is four. 
 %When the number of hops is larger than two, the experiment is ran in an asynchronous manner in order to have the right SINR.
 
@@ -147,7 +145,7 @@ The carrier frequency is chosen as $2.45$~GHz. The length of the Sync preamble i
     \caption{Testbed, two-hop scenario.}\label{fig:twohoptestbed}
 \end{figure}
 
-\subsection{BER, two-hop}
+\subsubsection{BER, two-hop}
 To begin with, we first built a two-hop testbed where two sources A and B exchange the information through a relay, as shown in Fig.~\ref{fig:twohoptestbed}. 
 
 Fig.~\ref{fig:e2e_ber} (a) and (b) shows the BER in the MA communications and the end-to-end BER for the two-hop case, respectively. As anticipated, the BER performance deteriorates when the payload length increases, due to the non-stationary wireless channel and the CFOs. Thus, to maintain a low BER,  preambles could be repeated periodically.
@@ -196,7 +194,7 @@ than that of hop-by-hop relay. Using the inexpensive USRP testbed, it is encoura
       \hspace*{-12pt} (a) End-to-end BER &
  \hspace*{-12pt} (b) Normalized throughput
       \end{tabular}
-       \caption{Multi-hop performance.} %(payload = 160 bits)}
+       \caption{Multi-hop performance. Multi-hop End-to-End BER are calculated using formulations outlined in table 5.1 of \cite{zhang2017cross}.} %(payload = 160 bits)}
     \label{fig:experiment_ber}
 \end{figure}
   
@@ -211,6 +209,8 @@ than that of hop-by-hop relay. Using the inexpensive USRP testbed, it is encoura
 To evaluate and compare the performance of the proposed MPNC in controllable and repeatable environment with a wide range of settings, we used Matlab and GNURadio to conduct extensive simulations and the results are presented in this section. 
 
 %In this section, the performance of the proposed multi-hop PNC scheme is evaluated using excessive simulations. Also the effect of multiple parameters that are not controllable in practice is studied. Matlab and GNURadio are softwares used to run simulations. 
+
+\iffalse
 
 \subsubsection{Different number of hops} % (fold)
 \label{sub:awgn}
@@ -236,6 +236,11 @@ In Fig. \ref{ber-D-MPNC}(c), when $\alpha=2$, the two-hop PNC achieves the best 
 In Fig. \ref{ber-D-MPNC}(b), when $\alpha=3$, the optimal number of relays depends on the end-to-end SNR (or distance). 
 %In Figs. \ref{ber-D-MPNC}(b) and (c), with the increase of end-to-end $\text{SNR}_{ab}$(dB), the end-to-end BER performance converges with a larger relay number $N$. Because the interference from other transmitting nodes in multi-hop PNC also increase with the increase of $\text{SNR}_{ab}$(dB), and the SINR of two neighbor node approach to the upper bound. Further increase $\text{SNR}_{ab}$(dB) will not help to improve the end-to-end BER, as the SNR of each hop is upper bounded by $10\alpha\log_{10}{3}$(dB) as explained in Sec. \ref{sec-inter}.
 The results suggest that when $\alpha$ is large (e.g., $\ge3$), we can apply MPNC to solve long-distance wireless transmissions using a large number of relay. 
+
+\fi
+
+
+
 
 \subsubsection{Goodput performance comparison} % (fold)
 \label{sub:throughput}

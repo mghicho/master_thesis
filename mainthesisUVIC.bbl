@@ -1,14 +1,173 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
-\bibitem{atkin}
-Cliff Atkinson.
-\newblock {\em Beyond Bullet Points: Using Microsoft Office PowerPoint 2007 to
-  Create Presentations That Inform}.
-\newblock Microsoft Press, 2008.
+\bibitem{wlan2011}
+Wireless {LAN} medium access control ({MAC}) and physical layer ({PHY})
+  specifications amendment 8: {IEEE} 802.11 wireless network management,
+  September 2011.
 
-\bibitem{booth1}
-Wayne Booth.
-\newblock {\em The Craft of Research}.
-\newblock University of Chicago Press, 2003.
+\bibitem{abichar2013group}
+Zakhia Abichar and J~Morris Chang.
+\newblock Group-based medium access control for {IEEE} 802.11n wireless {LAN}s.
+\newblock {\em IEEE Transactions on Mobile Computing}, 12(2):304--317, 2013.
+
+\bibitem{alvandi2015delay}
+Mohammadhossein Alvandi, Mustafa Mehmet-Ali, and Jeremiah~F Hayes.
+\newblock Delay optimization and cross-layer design in multihop wireless
+  networks with network coding and successive interference cancelation.
+\newblock {\em IEEE JSAC}, 33(2):295--308, 2015.
+
+\bibitem{bianchi2000performance}
+Giuseppe Bianchi.
+\newblock Performance analysis of the {IEEE} 802.11 distributed coordination
+  function.
+\newblock {\em IEEE Journal on Selected Areas in Communications},
+  18(3):535--547, 2000.
+
+\bibitem{breslau2000advances}
+Lee Breslau, Deborah Estrin, Haobo Yu, Kevin Fall, Sally Floyd, John Heidemann,
+  Ahmed Helmy, Polly Huang, Steven McCanne, Kannan Varadhan, et~al.
+\newblock Advances in network simulation.
+\newblock {\em IEEE Computer}, (5):59--67, 2000.
+
+\bibitem{4567443}
+V.~R. Cadambe and S.~A. Jafar.
+\newblock Interference alignment and degrees of freedom of the k -user
+  interference channel.
+\newblock {\em IEEE Trans. on Info. Theory}, 54(8):3425--3441, Aug 2008.
+
+\bibitem{7218598}
+B.~Chen, V.~Yenamandra, and K.~Srinivasan.
+\newblock Interference alignment using shadow channel.
+\newblock In {\em Proc. IEEE INFOCOM}, pages 2128--2136, April 2015.
+
+\bibitem{fung2010preamble}
+Patrick Ho~Wang Fung, Sumei Sun, and Chin~Keong Ho.
+\newblock Preamble design for carrier frequency offset estimation in two-way
+  relays.
+\newblock In {\em Signal Processing Advances in Wireless Communications
+  (SPAWC), 2010 IEEE Eleventh International Workshop on}, pages 1--5. IEEE,
+  2010.
+
+\bibitem{gollakota2008zigzag}
+Shyamnath Gollakota and Dina Katabi.
+\newblock {\em Zigzag Decoding: Combating Hidden Terminals in Wireless
+  Networks}.
+\newblock SIGCOMM '08. ACM, 2008.
+
+\bibitem{Draft80211ah}
+{{IEEE} 802.11ah Task Group}.
+\newblock 11/1137r14 specification framework for {TGah}.
+
+\bibitem{Req80211ah}
+{{IEEE} 802.11ah Task Group}.
+\newblock {TGah} functional requirements and evaluation methodology rev.5.
+
+\bibitem{fullduplex}
+Mayank Jain, Jung~Il Choi, Taemin Kim, Dinesh Bharadia, Siddharth Seth, Kannan
+  Srinivasan, Philip Levis, Sachin Katti, and Prasun Sinha.
+\newblock Practical, real-time, full duplex wireless.
+\newblock In {\em Proc. ACM MOBICOM}, MobiCom '11, pages 301--312, New York,
+  NY, USA, 2011. ACM.
+
+\bibitem{katti2007embracing}
+Sachin Katti, Shyamnath Gollakota, and Dina Katabi.
+\newblock Embracing wireless interference: Analog network coding.
+\newblock {\em Proc. ACM SIGCOMM}, 37(4):397--408, 2007.
+
+\bibitem{khurana1999performance}
+Sumit Khurana, Anurag Kahol, Sandeep~KS Gupta, and Pradip~K Srimani.
+\newblock Performance evaluation of distributed co-ordination function for
+  {IEEE} 802.11 wireless {LAN} protocol in presence of mobile and hidden
+  terminals.
+\newblock In {\em Proceedings of 7th International Symposium on Modeling,
+  Analysis and Simulation of Computer and Telecommunication Systems,
+  MASCOT'99}, pages 40--47, 1999.
+
+\bibitem{kim2015optimal}
+Yunbae Kim, Ganguk Hwang, Jungsun Um, Sungjin Yoo, Hoiyoon Jung, and Seungkeun
+  Park.
+\newblock Optimal throughput analysis of a super dense wireless network with
+  the renewal access protocol.
+\newblock In {\em IEEE International Conference on Communication Workshop,
+  ICCW'15}, pages 2194--2199, 2015.
+
+\bibitem{mzig}
+Linghe Kong and Xue Liu.
+\newblock mzig: Enabling multi-packet reception in zigbee.
+\newblock In {\em Proc. ACM MOBICOM}, MobiCom '15, pages 552--565, New York,
+  NY, USA, 2015. ACM.
+
+\bibitem{lu2013implementation}
+Lu~Lu, Taotao Wang, Soung~Chang Liew, and Shengli Zhang.
+\newblock Implementation of physical-layer network coding.
+\newblock {\em Physical Commun.}, 6:74--87, 2013.
+
+\bibitem{moltchanov2012distance}
+Dmitri Moltchanov.
+\newblock Distance distributions in random networks.
+\newblock {\em Ad Hoc Networks}, 10(6):1146--1166, 2012.
+
+\bibitem{raeesi2014performance}
+Orod Raeesi, Juho Pirskanen, Ali Hazmi, Toni Levanen, and Mikko Valkama.
+\newblock Performance evaluation of {IEEE} 802.11 ah and its restricted access
+  window mechanism.
+\newblock In {\em IEEE International Conference on Communications Workshops,
+  ICC'14}, pages 460--466, 2014.
+
+\bibitem{sourcesync}
+Hariharan Rahul, Haitham Hassanieh, and Dina Katabi.
+\newblock Sourcesync: A distributed wireless architecture for exploiting sender
+  diversity.
+\newblock In {\em Proc. ACM SIGCOMM}, SIGCOMM '10, pages 171--182, New York,
+  NY, USA, 2010. ACM.
+
+\bibitem{tseng2014effective}
+Hsueh-Wen Tseng, Yao-Chung Fan, Shiann-Tsong Sheu, and Shaiu-Yi Ou.
+\newblock An effective grouping scheme for avoiding hidden node problem in
+  {IEEE} 802.15. 4-based wireless sensor networks.
+\newblock {\em ACM SIGAPP Applied Computing Review}, 14(1):30--40, 2014.
+
+\bibitem{tsertou2008revisiting}
+Athanasia Tsertou and David~I Laurenson.
+\newblock Revisiting the hidden terminal problem in a {CSMA/CA }wireless
+  network.
+\newblock {\em IEEE Transactions on Mobile Computing}, 7(7):817--831, 2008.
+
+\bibitem{wu2006wsn02}
+Haitao Wu, Fan Zhu, Qian Zhang, and Zhisheng Niu.
+\newblock Wsn02-1: Analysis of {IEEE} 802.11 dcf with hidden terminals.
+\newblock In {\em IEEE Global Telecommunications Conference, GLOBECOM'06.},
+  pages 1--5, 2006.
+
+\bibitem{yoonregrouping}
+Sung-Guk Yoon, Jeong-O Seo, and Saewoong Bahk.
+\newblock Regrouping algorithm to alleviate the hidden node problem in 802.11
+  ah networks.
+\newblock {\em Computer Networks}, 105:22--32, 2016.
+
+\bibitem{zhang2017cross}
+Haoyuan Zhang.
+\newblock {\em Cross-layer design for multi-hop two-way relay network}.
+\newblock PhD thesis, 2017.
+
+\bibitem{zhang2006hot}
+Shengli Zhang, Soung~Chang Liew, and Patrick~P Lam.
+\newblock Hot topic: physical-layer network coding.
+\newblock In {\em Proc. ACM MOBICOM}, pages 358--365, 2006.
+
+\bibitem{zheng2014performance}
+Lei Zheng, Minming Ni, Lin Cai, Jianping Pan, Chittabrata Ghosh, and Klaus
+  Doppler.
+\newblock Performance analysis of group-synchronized dcf for dense {IEEE}
+  802.11 networks.
+\newblock {\em IEEE Transactions on Wireless Communications},
+  13(11):6180--6192, 2014.
+
+\bibitem{zhong2014dcf}
+Lei Zhong, Yozo Shoji, Kiyohide Nakauchi, and Suyong Eum.
+\newblock {BE-DCF}: Barring-enhanced distributed coordination function for
+  machine type communications in {IEEE} 802.11 networks.
+\newblock In {\em IEEE International Conference on Communications Workshops,
+  ICC'14}, pages 467--471, 2014.
 
 \end{thebibliography}

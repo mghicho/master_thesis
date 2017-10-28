@@ -1,9 +1,56 @@
 \startchapter{Multi-Hop Transmission}
 \label{chapter:multi}
+something to connect IoT to PNC
+
+As new IoT applications emerge, the need for reliable multi-hop transmission between sensors is becoming more and more obvious. In many sensor network applications data can not be gathered using a single sink node and it has to be relayed with the help of other nodes. Linear sensor networks are one of the main applications with this criteria. They can be use for monitoring long highways, railroads, skyscrapers and walls. In many of these applications, using wire to connect sensors is either simply impossible or very expensive to deploy and maintain.
+
+Multi-hop relaying has always been a bottle neck for wireless communication for a long time. As the number of hops grows, the end to end throughput suffers drastically. A significant research effort has been employed to improve the throughput and reliability of multi-hop transmission. Recognizing interference as the main obstacle in multi-hop transmission, many new technologies have emerged. Technologies such as successive interference cancellation\cite{alvandi2015delay}, multi-packet detection and collision resolution using zigzag\cite{mzig}, interference alignment\cite{4567443, 7218598}, and full-duplex (FD) radios\cite{fullduplex} have all tried to use interference and broadcast nature of wireless channel in their favor.
+
+One of the technologies that is promising for multi-hop sensor network applications is physical layer network coding. It can increase the end to end throughput by decreasing the number of time slot that are required for a multi-hop transmission while maintaining an acceptable error rate. In the following sections, first the concept of PNC is explained and then our contribution is elaborated.
 
 \section{Physical Layer Network Coding}
 Here , explain the main idea of pnc.
 
+The concept of Network Coding is nothing new in the wireless domain. It relies on optimizing transmission of data by combining two or more messages in a network. Physical Layer Network Coding(PNC) is then nothing but a network coding happening at the physical layer.
+
+We use a three node linear network example to illustrate this idea\cite{zhang2006hot}. In figure \ref{fig:justThreeNodes}, nodes $A$ and $B$ have packets to exchange and node $R$ can act as a relay.
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/justThreeNodes.pdf}
+    \caption{Simple three node linear network. Nodes $A$ and $B$ have packets to exchange and node $R$ acts as relay} \label{fig:justThreeNodes}
+\end{figure}
+
+Assuming that $A$ and $B$ are too far for a reliable transmission, there are different ways for this exchange of packets to happen, traditional relaying, straightforward network coding and physical layer network coding.
+
+An exchange of packets between $A$ and $B$ where relay only works a traditional decode and forward node takes four time slots as illustrated in figure \ref{fig:traditionalRelay}.  
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/traditionalRelay.pdf}
+    \caption{Traditional relaying. First, node $A$ transmits its packet to relay, then the relay forwards $A$'s packet to $B$, then in time slot three,node B, sends its packet to the relay, which is then forwarded to node $A$ in time slot four.} \label{fig:traditionalRelay}
+\end{figure}
+
+Using straightforward network coding, reduces the number of time slots required for that aforementioned exchanged to happen to three. Figure \ref{fig:straightforwardNC} shows this scenario. This way, using the broadcast nature of the wireless channel, the relay having stored both $A$ and $B$'s message, broadcasts a combined version of $X_1$ and $Y_1$. Then both $A$ and $B$ can decode the other node's packet, having their own message and the message they received from the relay. The simplest coding scheme to be used by relay to generate the combined message is calculating XOR of  $X_1$ and $Y_1$.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/straightforwardNC.pdf}
+    \caption{Straightforward network coding. First, $A$ transmits its packet to relay, then $B$ transmits its message to the relay, then relay calculates $Z_1=X_1 \oplus Y_1$ and broadcasts it to $A$ and $B$ in time slot three, which can then decode the other nodes message by another XOR.} \label{fig:straightforwardNC}
+\end{figure}
+
+Physical layer network coding is similar to straightforward networking coding with the difference that in PNC, the two messages from $A$ and $B$ are coded(combined) in the physical layer using the additive nature of simultaneously arriving electromagnetic (EM) waves \cite{zhang2006hot}. This reduces the number time slot for the same exchange to two. In a simple BPSK modulation where 0 and 1 are represented with $-1$ and $+1$ respectively, if $A$ and $B$ transmit their packet to the relay at the same time, they relay will received symbols of $-2$, $0$, and $+2$. At this step, every PNC capable relay requires a mapping function, to convert these new symbols into bits of data with a meaningful relationship to $A$ and $B$'s bits. In this simple BPSK example, mapping $-2$ and $+2$ symbols to 1 and $0$ symbols to 0, means that the received message at the relay is again XOR of $A$ and $B$'s packets. Just like the straightforward network coding, the relay then broadcasts this information back to $A$ and $B$ and they will use it to extract the other node's packet.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/threeNodePnc.pdf}
+    \caption{Physical layer network coding. In time slot one, $A$ and $B$ will transmit their packets to the relay at the same time(Multiple Access phase). The relay, using its mapping function extracts XOR of $A$ and $B$'s packets and broadcasts it to them in time slot two(Broadcast phase).} \label{fig:threeNodePnc}
+\end{figure}
+
+The same technique can be extended to linear multi-hop networks with than two hops. Although a multi-hop scenario suffers from interference from other nodes, PNC is among technologies that can still maintain a reliable error rate and almost the same throughput.
+
+While the theory of PNC technology has been around for a while, it's implementation and real-life applications have lacked behind. A practical PNC implementation has multiple challenges, most notably Carrier-Frequency Offsets(CFO) and timing synchronization. In the Multiple Access(MA) phase, they relay has to receive a signal from two sources, tracking the CFO from two transmitters while their signals is superimposed is one of the main difficulties. Existing implementations require an interference free part in each signal which comes with a high overhead and is restrictive for multi-hop scenarios. This thesis proposes novel idea to overcome the CFO challenge and have the relay correctly receive the sum signal in MA phase. The following sections explain design and implementation of a Software Defined Radio(SDR) PNC communication system on the GNURadio platform. The design is then implemented on USRP testbed. Extensive simulations and experiments have been done to investigate the proposed implementation and its feasibility. The results are presented in chapter \ref{chapter:eval}.
 
 \section{Implementation}
 We implemented the proposed MPNC on USRP and GNURadio to build the multi-hop wireless testbed.
