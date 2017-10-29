@@ -40,6 +40,12 @@ B.~Chen, V.~Yenamandra, and K.~Srinivasan.
 \newblock Interference alignment using shadow channel.
 \newblock In {\em Proc. IEEE INFOCOM}, pages 2128--2136, April 2015.
 
+\bibitem{doppler2009device}
+Klaus Doppler, Mika Rinne, Carl Wijting, C{\'a}ssio~B Ribeiro, and Klaus Hugl.
+\newblock Device-to-device communication as an underlay to lte-advanced
+  networks.
+\newblock {\em IEEE Communications Magazine}, 47(12), 2009.
+
 \bibitem{fung2010preamble}
 Patrick Ho~Wang Fung, Sumei Sun, and Chin~Keong Ho.
 \newblock Preamble design for carrier frequency offset estimation in two-way
@@ -47,6 +53,13 @@ Patrick Ho~Wang Fung, Sumei Sun, and Chin~Keong Ho.
 \newblock In {\em Signal Processing Advances in Wireless Communications
   (SPAWC), 2010 IEEE Eleventh International Workshop on}, pages 1--5. IEEE,
   2010.
+
+\bibitem{ghasemiahmadi2017rss}
+Mohammad Ghasemiahmadi, Yue Li, and Lin Cai.
+\newblock Rss-based grouping strategy for avoiding hidden terminals with gs-dcf
+  mac protocol.
+\newblock In {\em Wireless Communications and Networking Conference (WCNC),
+  2017 IEEE}, pages 1--6. IEEE, 2017.
 
 \bibitem{gollakota2008zigzag}
 Shyamnath Gollakota and Dina Katabi.
@@ -73,6 +86,12 @@ Mayank Jain, Jung~Il Choi, Taemin Kim, Dinesh Bharadia, Siddharth Seth, Kannan
 Sachin Katti, Shyamnath Gollakota, and Dina Katabi.
 \newblock Embracing wireless interference: Analog network coding.
 \newblock {\em Proc. ACM SIGCOMM}, 37(4):397--408, 2007.
+
+\bibitem{khorov2015survey}
+Evgeny Khorov, Andrey Lyakhov, Alexander Krotov, and Andrey Guschin.
+\newblock A survey on {IEEE} 802.11 ah: An enabling networking technology for
+  smart cities.
+\newblock {\em Computer Communications}, 58:53--69, 2015.
 
 \bibitem{khurana1999performance}
 Sumit Khurana, Anurag Kahol, Sandeep~KS Gupta, and Pradip~K Srimani.

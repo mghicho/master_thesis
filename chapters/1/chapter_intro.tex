@@ -2,72 +2,38 @@
 \label{chapter:introduction}
 
 The word \textit{IoT}, which stands for Internet of Things, describes an environment where every "\textit{thing}" is connected to the Internet. The use of the word "\textit{thing}" suggests that no device is exempt. The number of opportunities that a world where every device, small or large is connected to a global network brings, is beyond anyone's imagination. As always, along with opportunities come challenges that need to be resolved for such a scenario to function properly. Almost all layers of communication protocol need to be redesigned to handle these challenges, together with an effort to come up with applications that can use the extra-connectivity in its full potential.
-%\pagebreak
-\section{My Claims}
-Something must be new in this work, no matter how small, since you are getting a graduate degree for it! Tell me about it clearly and succintly right now, just as you did in the abstract. Make an impact here. How about something like the following box:
 
-I make \textit{four} claims which
-my dissertation validates:
-\\
+The "\textit{things}" that IoT refers to can be everyday objects. From home appliances to cars and roads. But perhaps the importance of IoT can be never be understood without focusing on sensors. Sensor networks use in monitoring and metering applications are perhaps one of the main and first applications of IoT. Sensor that can be attached to anything and can be anywhere with different requirements. For some emergency response related application, latency is the key factor, whereas for some long term monitoring applications, power consumption is more important. But one things most IoT application have in common is their large density of nodes. For this reason, any IoT solution has to be able to function in densely populated network. 
 
-\framebox{%
-\parbox{5in}{
-	My new algorithm to solve the problem of doing nothing include these important new features whose practical applicability can be proved both formally and empirically:
-	\begin{enumerate}
-	\item first feature;
-	\item second feature;
-	\item everything is much easier to understand, and therefore, easier to implement correctly.
-	\end{enumerate}
-}}
-\\
+It it almost inevitable to think that this super connected world can be only achieved using wireless communication. And one can grasp and idea of how dominant the IoT can be by just looking at future standards in all wireless communication technologies. In cellular communication, Device to Device(D2D) communication is obviously a major part of the next generation of LTE standard known as 5G\cite{doppler2009device}. There has also been dedicated effort to support the dense network of nodes that an IoT environment brings and to support the very low latency that some critical IoT applications like autonomous cars require. Just like cellular communication, wirelessLAN community have also taken big steps toward future IoT network. IEEE 802.11ah standard has been designed with IoT in mind. It not only introduces new sub 1GHz bands for sensor networks, also addresses the intense channel contention that a dense network brings. For the first time among .11 standards, it can support up to 6000 nodes connected to one access point\cite{khorov2015survey}. 
 
-\noindent Claim 1 and claim 2 are \textit{quantitative} - they will be proven by experiment.
+Another promising IoT technology is Physical Layer Network Coding(PNC). It can present a robust solution for multi-hop communications. Multi-hop communication is essential to IoT applications that have large number of sensors scattered in large geographical areas such as sensors monitoring highways, railroads, rivers and skyscrapers. The nature of these applications does not allow a direct connection to a sink node for every sensor. Thus, packets have to be relayed to the sink node with the help of other nodes. 
 
-\noindent Claim 3 is \textit{qualitative} - they will be demonstrated by argument.
 
-\subsection{The Importance of My Claims}
+\section{Research Objectives and Contributions}
+This is thesis is trying to solve two IoT problems. For single hop transmissions, the hidden terminal problem in infrastructure-based IoT scenarios is considered. And for multi-hop transmissions, the implementation of a physical layer network coding system for relay transmissions is the focus.
 
-Some very important positive consequences
-arise from the validation of the above claims.
-It is these consequences that comprise a significant
-positive contribution to research in the field
-of whatever the field is.
-\\
+\subsection{RSS-Based Grouping Strategy}
+The IEEE 802.11ah standard proposed for dense sensor networks, uses a sub 1GHz band that can result transmission ranges as high as 1Km. In a network with such a large radius and density, the traditional hidden terminal problem becomes more serious and conventional solution does not seem to address the problem in full extent. recognizing this challenge, an RSS-based grouping strategy is proposed to categorize nodes in a way that the hidden terminal problem can no longer be an issue. The performance
+gain of the proposed method is then evaluated by analytical model and simulations.
 
-\noindent Claim 1 implies that:
-\begin{enumerate}
-\item{Something profound which applies to:
-	\begin{itemize}
-	\item {something excellent;}
-	\item {something important.}
-	\end{itemize}}
-\item{Something else just as profound.}
-\end{enumerate}
 
-\noindent Claim 2 implies that:
-\begin{itemize}
-\item{Repeat as above if necessary and useful.}
-\end{itemize}
+\section{Practical Physical Layer Network Coding Implementation}
+Despite being proposed a decade ago, physical layer network coding have not yet been fully used in practical applications. One of the reasons behind this delay it implementation challenges that a real-life PNC system has to face. Implementation challenges of PNC are addressed and studied in this dissertation. Providing a solution for these challenges, feasibility of a real-life PNC system is proven by a software defined radio implementation on GNURadio platform. Different performance parameters are then measured in both simulation and experiment. 
 
-\noindent The consequence of claim 3 is that:
-\begin{itemize}
-\item{There must be something good coming out of all this work!}
-\end{itemize}
 
-\section{Agenda}
 
-This section provides a map of the dissertation
-to show the reader where and how it validates
-the claims previously made. Here is where I am also presenting my own style of organization which may be totally different from what your supervisor thinks. However, trust me, this is a good solid beginning for a structure. Your supervisor may ask you to change it, but will still appreciate what you have! For each of the chapters below I also give a short summary of what the main focus should be and then I expand on it  a bit within the chapter itself.
+\section{Dissertation Organization}
 
+This thesis is organized as following:
 \begin{description}
-\item[\textbf{Chapter 1}] give and introduction about the concept of IoT
-\item[\textbf{Chapter 2}] describes in details the open problem which is to be tackled together with its context
-\item[\textbf{Chapter 3}] explaines the rss-based grouping strategy
-\item[\textbf{Chapter 4}] is going to explain the pnc implementation
-\item[\textbf{Chapter 5}] is the pnc practical experiments with photos of usrps
-\item[\textbf{Chapter 6}] is the evaluation resutls of both works.
-\item[\textbf{Chapter 7}] is the conclution
+\item[\textbf{Chapter \ref{chapter:introduction}}] gives and introduction about the concept of IoT, and explains breifly the problems that this thesis is trying to solve.
+\item[\textbf{Chapter \ref{chapter:single}}] explains the IEEE 802.11ah standard and the proposed RSS-based grouping strategy for GS-DCF protocol.
+\item[\textbf{Chapter \ref{chapter:multi}}] explains the Physical Layer Network Coding technology and it's practical challenges and presents a Software Defined Radio implementation of a PNC system.
+\item[\textbf{Chapter \ref{chapter:eval}}] presents the evaluation and results for both works presented in chapter \ref{chapter:single} and \ref{chapter:multi}. It includes both simulation and experimental results.
+\item[\textbf{Chapter \ref{chapter:concl}}] is the conclusion. It also presents areas for further research and improvement of this work.
 \end{description}
 
-The list above is not complete. Chapter 3 actually includes a lot more, as I could not resist placing in it a few \LaTeX examples to help you along. This document is not a primer for \LaTeX, but there is no harm done in giving a little help.
+
+\section{Bibliographic Notes}
+The work in chapter \ref{chapter:single} was published in \cite{ghasemiahmadi2017rss}. 
