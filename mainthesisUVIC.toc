@@ -12,16 +12,16 @@
 \contentsline {section}{\numberline {1.3}Dissertation Organization}{3}
 \contentsline {section}{\numberline {1.4}Bibliographic Notes}{3}
 \contentsline {chapter}{\numberline {2}Single Hop Transmission}{4}
-\contentsline {section}{\numberline {2.1}802.11ah Standrad}{5}
-\contentsline {subsection}{\numberline {2.1.1}Physical Layer of 802.11ah}{5}
-\contentsline {subsection}{\numberline {2.1.2}MAC layer of 802.11ah}{5}
+\contentsline {section}{\numberline {2.1}IEEE 802.11ah Standrad}{5}
+\contentsline {subsection}{\numberline {2.1.1}Physical Layer of IEEE 802.11ah}{5}
+\contentsline {subsection}{\numberline {2.1.2}Medium Access Control layer of IEEE 802.11ah}{5}
 \contentsline {section}{\numberline {2.2}The Hidden Terminal Problem}{6}
-\contentsline {section}{\numberline {2.3}Related Works}{8}
-\contentsline {section}{\numberline {2.4}Rss-Based Grouping Strategy}{9}
-\contentsline {subsection}{\numberline {2.4.1}Motivation}{9}
+\contentsline {section}{\numberline {2.3}Related Works}{7}
+\contentsline {section}{\numberline {2.4}Rss-Based Grouping Strategy}{8}
+\contentsline {subsection}{\numberline {2.4.1}Motivation}{8}
 \contentsline {subsection}{\numberline {2.4.2}System Model}{9}
 \contentsline {subsection}{\numberline {2.4.3}RSS-Based Grouping}{10}
-\contentsline {subsection}{\numberline {2.4.4}Implementation Issues}{12}
+\contentsline {subsection}{\numberline {2.4.4}Implementation Issues}{11}
 \contentsline {subsection}{\numberline {2.4.5}Analytical Model}{13}
 \contentsline {chapter}{\numberline {3}Multi-Hop Transmission}{17}
 \contentsline {section}{\numberline {3.1}Physical Layer Network Coding}{18}

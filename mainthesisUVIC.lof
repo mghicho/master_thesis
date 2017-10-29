@@ -1,6 +1,6 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces A simple hidden terminal problem}}{7}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces A simple illustration of hidden terminal problem}}{7}
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Time diagram of RSS-based grouping algorithm, $\text {Beacon}^{\ast }$ is a BF initiating the grouping scheme. As it is shown in the figure, a GUP can be as large as several beacon intervals. Essentially it can last as long as the AP is satisfied with the throughput performance.}}{11}
 \contentsline {figure}{\numberline {2.3}{\ignorespaces A sample grouping showing how nodes are categorized location-wise using RSS-based grouping}}{12}
 \contentsline {figure}{\numberline {2.4}{\ignorespaces Two nodes and group head in one Voronoi cell}}{15}
