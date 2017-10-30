@@ -19,16 +19,15 @@ In the Physical Layer (PHY), 802.11ah makes use of sub 1GHz license-exempt bands
  In order to handle the large contention between nodes in dense scenarios, 802.11ah divides all nodes connected the access point into different groups, each group is then given a specified time window called Restricted Access Window (RAW) to use the wireless channel while members of all other groups remain silent. This essentially divides the beacon period into multiple RAWs each dedicated to one group. It not only decreases the contention that one node experiences while using the wireless channel, also lets nodes save power by going to sleep in RAWs that do not belong to them. It is left to the access point to decide whether or not to allow nodes to cross the RAW boundary just to finish an ongoing transmission (Cross Slot Boundary). This channel access mechanism is called Group Synchronized Distributed Coordination Function (GS-DCF) which is to be used instead of the traditional DCF.   
 
 \section{The Hidden Terminal Problem}
-
-The hidden terminal is a traditional problem in wireless communications. It usually happens when a node falls outside of sensing area of another node but they are both trying to communicate with a same node. Figure \ref{fig:hidden} illustrates a general case for the hidden terminal problem. For example, if the node A, first start the transmission of a packet to node B, and sometime in the middle of their communication, node C also decides to transmit a packet to B, according to the Carrier-Sense Multiple Access with Collision Avoidance (CSMA/CA) procedure, used in many wireless MAC layers, it will first listen to the channel, and since it can not sense the signal coming from A, it will find the channel ideal and initiate its transmission to B which will result in collision at B and loss of both packets of A and C. Wireless LANs in the infrastructure mode considering the up-link transmission, where every other node wants for transmit to the access point, are vulnerable to this problem. 
-
-
-\begin{figure} [h]
+\begin{figure}
   \centering
   \includegraphics[width=.65\textwidth]{figures/hidden}
   \caption{A simple illustration of hidden terminal problem}
   \label{fig:hidden}
 \end{figure}
+
+The hidden terminal is a traditional problem in wireless communications. It usually happens when a node falls outside of sensing area of another node but they are both trying to communicate with a same node. Figure \ref{fig:hidden} illustrates a general case for the hidden terminal problem. For example, if the node A, first start the transmission of a packet to node B, and sometime in the middle of their communication, node C also decides to transmit a packet to B, according to the Carrier-Sense Multiple Access with Collision Avoidance (CSMA/CA) procedure, used in many wireless MAC layers, it will first listen to the channel, and since it can not sense the signal coming from A, it will find the channel ideal and initiate its transmission to B which will result in collision at B and loss of both packets of A and C. Wireless LANs in the infrastructure mode considering the up-link transmission, where every other node wants for transmit to the access point, are vulnerable to this problem. 
+
 
 The legacy solution for this problem is the use of Request To Send (RTS) and Clear To Send (CTS) messages. Using these messages, every node has to send an RTS packet to its receiver and wait until it gets a CTS packet before starting a transmission. In this way, although node C might not sense the RTS from node A, it will receive the CTS that B sends to A and know that the channel for B is going to be busy. The only chance of collision because of the hidden terminal then, is during the transmission of the RTS message. Since the RTS is a small control message, collision probability will be reduced significantly. 
 
@@ -63,7 +62,7 @@ Although RTS/CTS and centralized grouping strategy have been proposed to address
   Based on the grouping idea in the IEEE 802.11ah standard, this chapter aims to solve the problem in a distributed manner without using RTS/CTS. Our solution ensures that nodes in the same group are close enough to each other so that they can always sense each other's transmission in their own RAW. 
 
 Different from the previous approaches, this thesis proposes an RSS-based grouping scheme.
-Nodes sense the received power from other nodes and join the group that has the largest sensed power. To the best of our knowledge, this is the first work to explicitly use signal strength for assigning nodes to their groups. The performance gain of the proposed method is then evaluated by analytical model and simulations. \iffalse CHECK THIS \fi The main contributions of this paper are three-fold. First, we propose an RSS-based grouping strategy to solve the hidden terminal problem in IEEE 802.11ah networks. Second, we derive the probability of two nodes in one group being able to sense each other. Third, extensive simulations using NS-2\cite{breslau2000advances} have been conducted, and the results show that, by using the proposed method, the hidden terminal problem becomes negligible in IEEE 802.11ah networks and RTS/CTS is no longer needed.
+Nodes sense the received power from other nodes and join the group that has the largest sensed power. To the best of our knowledge, this is the first work to explicitly use signal strength for assigning nodes to their groups. The performance gain of the proposed method is then evaluated by analytical model and simulations. \iffalse CHECK THIS \fi The main contributions of this chapter are three-fold. First, we propose an RSS-based grouping strategy to solve the hidden terminal problem in IEEE 802.11ah networks. Second, we derive the probability of two nodes in one group being able to sense each other. Third, extensive simulations using NS-2\cite{breslau2000advances} have been conducted, and the results show that, by using the proposed method, the hidden terminal problem becomes negligible in IEEE 802.11ah networks and RTS/CTS is no longer needed.
 
 
 \subsection{System Model} \label{systemmodel}
@@ -121,12 +120,13 @@ We propose an RSS-based strategy that a node will listen to some pilot messages 
 A time diagram of the algorithm is illustrated in Fig. \ref{fig:diagram} and an example of Voronoi cells is shown in Fig. \ref{fig:samplevonoroli}.
 
 
-\begin{figure*} [!tbp]
+\begin{figure*}
   \centering
   \includegraphics[width=0.95\textwidth]{figures/diagram}
   \caption{Time diagram of RSS-based grouping algorithm, $\text{Beacon}^{\ast}$ is a BF initiating the grouping scheme. As it is shown in the figure, a GUP can be as large as several beacon intervals. Essentially it can last as long as the AP is satisfied with the throughput performance.}
   \label{fig:diagram}
 \end{figure*}
+
 
 %Another schemes could be the case that access point assigns $M$ random nodes to $M$ different groups and then asks them to transmit their packet in the next beacon period (or a pilot packet if they do not have any) and other nodes will choose the RAW with largest avg received power. The first $M$ group assignments will be done like the centralized method previously used in 802.11ah. 
 
@@ -139,24 +139,25 @@ In the rare case that a node is very far from all the group heads, which means t
 %In the RSS-based grouping algorithm, it is mentioned that the pilot transmissions in GST should have a higher power than usual transmissions to prevent the case that a node cannot sense a signal in any GST.
  %which is again a case that can happen in DAP algorithm. Because of such unsolved issues about the first strategy we only study performance of RSS-based grouping scheme in this paper and compare it to other random schemes and optimum solution.
  
-\begin{figure} [!tbp]
-  \centering
-  \includegraphics[width=.95\textwidth]{figures/sample_vonoroli}
-  \caption{A sample grouping showing how nodes are categorized location-wise using RSS-based grouping}
-  \label{fig:samplevonoroli}
-\end{figure}
 
 
 \subsection{Implementation Issues}
 The proposed scheme can be readily implemented in current IEEE 802.11 systems without any major modifications. The power measurement already exists in the MAC layer of all systems and they can provide RSSI at any time, so nodes can then find the sensed power of each GST transmission by measuring the average RSSI during the reception time of the pilot. 
 
-GST can be as small as an ACK time and there should be some guard distance time between pilot transmissions from group heads. For the best performance, the optimum value of GUP and GST should be determined which is beyond the scope of this paper and they do not affect our following analysis. The grouping can also be triggered by the AP if the randomly selected headers result in unsatisfactory network performance.
+GST can be as small as an ACK time and there should be some guard distance time between pilot transmissions from group heads. For the best performance, the optimum value of GUP and GST should be determined which is beyond the scope of this thesis and they do not affect our following analysis. The grouping can also be triggered by the AP if the randomly selected headers result in unsatisfactory network performance.
 
 Including $M$ in BF is something that is already being done in the IEEE standard draft \cite{Draft80211ah}. Informing group heads about their index can also be done using a mapping strategy similar to the one used for delivery traffic indication known as DTIM.
 
 Our algorithm is also robust against interference from other APs. Since the GSTs are short and they could be transmitted consecutively with a gap of SIFS, any other CSMA/CA based station, e.g. other APs, cannot transmit anything during the grouping procedure.
 
 \subsection{Analytical Model}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=.95\textwidth]{figures/sample_vonoroli}
+  \caption{A sample grouping showing how nodes are categorized location-wise using RSS-based grouping}
+  \label{fig:samplevonoroli}
+\end{figure}
 
 In order to compare the performance of grouping schemes on hidden-terminal probability, here we define two metrics and use them along with the probability of having a hidden terminal in a group to show the benefits and costs of each grouping scheme. The first metric is the average distance between nodes in a group, $D_m$, which is defined as
 \begin{equation}
@@ -198,7 +199,7 @@ We can find PDF of $D$ by taking derivative of its CDF:
 f_D(x)=\frac{2\pi M x}{A}(1-\frac{\pi x^2}{A})^{M-1} \quad 0 \leq x \leq R.
 \end{equation}
 Using this PDF we can find the probability of having a hidden terminal when our RSS-based grouping scheme is used.
-\begin{figure}[h]
+\begin{figure}
     \centering
     \includegraphics[width=0.75\textwidth]{figures/webb2}
     \caption{Two nodes and group head in one Voronoi cell}

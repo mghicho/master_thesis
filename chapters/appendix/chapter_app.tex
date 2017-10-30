@@ -1,25 +1,33 @@
 \startappendix{Additional Information}
 \label{chapter:appendix}
 
-Here you should put the address of the github repository and also attach the troubles you faced working with GNURadio or maybe even a small tutorial about to get the code running from installing the gnuradio and adding modules.
+In order to use the PNC implementaiton, first the GNURadio software has to be installed. It can be found in \url{https://www.gnuradio.org} for Linux, Mac Os, and Windows. In the GNURadio platfrom, any block that is not part of the build-in enviroment is called an Out of Tree (OOT) block. In the next step, blocks written for this thesis need to be imported in the GNURadio enviroment. Below is the solution to some common troubles that one might face while installing the PNC library into a new computer along with some tips for further developing the library in GNURadio platform.
 
+\section{Installing out of tree modules on Mac OS}
 
-
-\section{Installing out of tree modules on MAC}
-
-If GRC complains that it can't find some blocks like:
-
+If GRC complains that it can not find some blocks like:
+\begin{footnotesize}
+\begin{lstlisting}
 Error: Block key "name of block" not found in Platform - grc(GNU Radio Companion)
-Most likely you used a different CMAKE_INSTALL_PREFIX for the module than for GNU Radio. Therefore, the blocks of the module ended up in a different directory and GRC can't find them. You have to tell GRC where these blocks are by creating/adding to your ~/.gnuradio/config.conf something like
+\end{lstlisting}
+\end{footnotesize}
+Most likely you used a different \textit{CMAKE\_INSTALL\_PREFIX} for the module than for GNU Radio. Therefore, the blocks of the module ended up in a different directory and GRC can't find them. You have to tell GRC where these blocks are by creating/adding to your ~/.gnuradio/config.conf something like
 
+\begin{footnotesize}
+\begin{lstlisting}
 [grc]
 local_blocks_path = /usr/local/share/gnuradio/grc/blocks
+\end{lstlisting}
+\end{footnotesize}
 But with the directories that match your installation.
 
 If this is your problem you have probably installed python modules correctly but GRC can not find modules.
 
-#####How to find the above address? if you look at you installation report after sudo make install command you can find out where is the location of *.xml files. it's something like this:
+\subsubsection{How to find the above address?}
+If you look at you installation report after sudo make install command you can find out where is the location of *.xml files. it should be something like this:
 
+\begin{footnotesize}
+\begin{lstlisting}
 -- Installing: /usr/local/share/gnuradio/grc/blocks/mac_simple_mac.xml
 -- Installing: /usr/local/share/gnuradio/grc/blocks/mac_virtual_channel_encoder.xml
 -- Installing: /usr/local/share/gnuradio/grc/blocks/mac_virtual_channel_decoder.xml
@@ -28,10 +36,14 @@ If this is your problem you have probably installed python modules correctly but
 -- Installing: /usr/local/share/gnuradio/grc/blocks/mac_packet_to_pdu.xml
 -- Installing: /usr/local/share/gnuradio/grc/blocks/mac_802_3_tracker.xml
 -- Installing: /usr/local/share/gnuradio/grc/blocks/mac_burst_tagger.xml
-which indicates that the installation have copied xml files in /usr/local/share/gnuradio/grc/blocks
+\end{lstlisting}
+\end{footnotesize}
+which indicates that the installation have copied xml files in \textit{/usr/local/share/gnuradio/grc/blocks}
 
-#uhd commands: there are some simple commands that one can use after installing GNURadio, specially if you want a simple spectrum analyzer or want to Record I/Q sample stream to a file and use in another software like MATLAB. they are listed below. they all include a "-h" switch which will display a help screen. more info here
-
+\subsection{UHD commands}
+UHD is the free and open-source software driver and API for USRP devices. It will be installed with GNURadio. There are some simple commands that one can use after installing GNURadio, specially if you want a simple spectrum analyzer or want to Record I/Q sample stream to a file and use in another software like MATLAB. They are listed below. They all include a "-h" switch which will display a help screen. More information can be found in \url{https://gnuradio.org/redmine/projects/gnuradio/wiki/HowToUse}
+\begin{footnotesize}
+\begin{lstlisting}
 uhd_cal_rx_iq_balance
 uhd_find_devices
 uhd_siggen
@@ -43,46 +55,70 @@ uhd_rx_cfile
 uhd_usrp_probe
 uhd_fft     
 uhd_rx_nogui     
+\end{lstlisting}
+\end{footnotesize}
 
-\subsection{Adding new modules to gnuradio in mac os}
+\subsection{Adding new modules to gnuradio in Mac OS}
 
-If you've installed your gnuradio with mac port, first you need to make sure that the mac port python is in use. then when you wanna compile the module use this:
-
-cmake -DPYTHON_LIBRARY=/opt/local/lib/libpython2.7.dylib -DCMAKE_INSTALL_PREFIX=/opt/local/ ../
-after compiling the code( make and sudo make install) put these two lines in .bash_profile :
-
-export PYTHONPATH=/opt/local/lib/python2.7/site-packages:$PYTHONPATH
+If you've installed your gnuradio with mac port, first you need to make sure that the mac port python is in use. then when you want to compile PNC modules use this:
+\begin{footnotesize}
+\begin{lstlisting}
+cmake -DPYTHON_LIBRARY=/opt/local/lib/libpython2.7.dylib
+-DCMAKE_INSTALL_PREFIX=/opt/local/ ../
+\end{lstlisting}
+\end{footnotesize}
+after compiling the code( make and sudo make install) put these two lines in \textit{.bash\_profile} :
+\begin{footnotesize}
+\begin{lstlisting}
+export PYTHONPATH=/opt/local/lib/python2.7/site-packages:\$PYTHONPATH
 export GRC_BLOCKS_PATH=/usr/local/share/gnuradio/grc/blocks
+\end{lstlisting}
+\end{footnotesize}
 
 \subsection{Adding a library for linking}
 
-If an outside library has been used for a block. That library might be needed in linking phase of making. the standard place for libraries is /usr/local/lib , if the library is already build and installed its file must be there. If the use has the .a or .so or .dylib file they may put a copy of it in that folder so the gcc can easily find it with the flag -l<name of library>. for example if the name of library is levmar, the filename is liblevmar.a and the flag would -llevmar. in order to add the linking flag to all the codes, the function target_link_libraries in the file CMakeLists.txt found in the lib folder of the module has to be modified in the following order. For example in order to add the levmar library the line:
-
+If an outside library has been used for a block. That library might be needed in linking phase of making. The standard place for libraries is \textit{/usr/local/lib} , if the library is already build and installed its file must be there. If the user has the .a or .so or .dylib file they may put a copy of it in that folder so the \textit{gcc} can easily find it with the flag \textit{-l$<$name of library$>$}. For example if the name of library is levmar, the filename is liblevmar.a and the flag would be \textit{-llevmar}. In order to add the linking flag to all the codes, the function \textit{target\_link\_libraries} in the file \textit{CMakeLists.txt} found in the \textit{lib} folder of the module has to be modified in the following order. For example in order to add the levmar library the line:
+\begin{footnotesize}
+\begin{lstlisting}
 target_link_libraries(gnuradio-pnc ${Boost_LIBRARIES} ${GNURADIO_ALL_LIBRARIES})
+\end{lstlisting}
+\end{footnotesize}
+
 will change to :
-
+\begin{footnotesize}
+\begin{lstlisting}
 target_link_libraries(gnuradio-pnc ${Boost_LIBRARIES} ${GNURADIO_ALL_LIBRARIES} levmar)
-The same thing happens to all other used of function target_link_libraries in that file. run the cmake command and make again after modifing this file.
+\end{lstlisting}
+\end{footnotesize}
+The same thing happens to all other uses of function \textit{target\_link\_libraries} in that file. Run the \textit{cmake} command and make again after modifing this file.
 
-While installing gr-cdma:
-
-if you're getting a linking error related to lib4cpp, search the build directory for "link.txt" and add -llib4cpp at the end of all of those files.
 
 \subsection{OOT modules in Ubuntu}
 
 If after compilling and installing a new block in ubuntu, when everything is fine, you stil get this error:
-
+\begin{footnotesize}
+\begin{lstlisting}
 AttributeError : 'module' object has no attribute 'block name'
-in order to fix it, first check the enviroment variable PYTHONPATH and make sure it point to where the python blocks are, if it didn't solve the problem, then it might be because SWIG is not install. if that's the case, you must've got this error after cmakeing:
+\end{lstlisting}
+\end{footnotesize}
 
+In order to fix it, first check the enviroment variable \textit{PYTHONPATH} and make sure it point to where the python blocks are, if it did not solve the problem, then it might be because SWIG is not installed. If that is the case, you must have got this error after cmakeing:
+\begin{footnotesize}
+\begin{lstlisting}
 disabling swig because version check failed
+\end{lstlisting}
+\end{footnotesize}
 in order to solve it, simply install swig on your ubuntu machine by running the below code:
-
+\begin{footnotesize}
+\begin{lstlisting}
 sudo apt-get install swig
+\end{lstlisting}
+\end{footnotesize}
 
 \subsection{Blocks with Multiple Inputs}
-put the MAX_INT parameter as -1. the input_items input of the work function is vector of void stars. these void stars can be casted to the desired type of input, e.g. to gr_complex* in case of complex input. Obviously the number of input ports can be obtained from size of the vector. Example:
-
+Put the \textit{MAX\_INT} parameter as $-1$. The \textit{input\_items} input of the \textit{work} function is a vector of void stars. These void stars can be casted to the desired type of input, e.g. to \textit{gr\_complex*} in case of complex input. Obviously the number of input ports can be obtained from the size of the vector. Example:
+\begin{footnotesize}
+\begin{lstlisting}
 int number_of_inputs=input_items.size();
 for(int i=0;i<number_of_inputs;i++)
 {
@@ -90,16 +126,18 @@ for(int i=0;i<number_of_inputs;i++)
  const gr_complex *in_i = (const gr_complex *) input_items[0];
  now we can iterate in in_i for items of i_th input.
 }
+\end{lstlisting}
+\end{footnotesize}
 
 
-\section{Working with tagged_stream_blocks}
+\section{Working with \textit{tagged\_stream\_blocks}}
 
-The definition for the work function of tagged_stream_blocks looks like the one for general_work of other blocks. but the difference here is that the input noutput_items is "not" number of output items to write on each output stream. In this case, this variable shows The size of the writable output buffer which can be a lot larger than the pdu size. this essentially makes this variable unusable. Instead use ninput_items[i] where i is the index of input to find the pdu length.
+The definition for the \textit{work} function of \textit{tagged\_stream\_blocks} looks like the one for \textit{general\_work} of other blocks. But the difference here is that the input \textit{noutput\_items} is "not" number of output items to write on each output stream. In this case, this variable shows The size of the writable output buffer which can be a lot larger than the pdu size. This essentially makes this variable unusable. Instead use \textit{ninput\_items[i]} where i is the index of input to find the pdu length.
 
 
 
 \section{Positioning and Tabs with QT}
 
-In order to have tabs when using QT, insert the block, QT GUI Tab Widget and put the number of tabs and a label for each tab. In order to put each QT component in the desired tab use the phrase tab@T:x,y in their GUI hint, where T is the tab index, and x,y in the position you want the component to be in.
+In order to have tabs when using QT as your GUI engine, insert the block, \textit{QT GUI Tab Widget} and put the number of tabs and a label for each tab. In order to put each QT component in the desired tab use the phrase tab@T:x,y in their GUI hint property, where T is the tab index, and x,y is the position you want the component to be at.
 
-\section{Setting internal USRP time to zero in GRC}
+% \section{Setting internal USRP time to zero in GRC}

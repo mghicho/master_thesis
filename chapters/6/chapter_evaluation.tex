@@ -1,6 +1,6 @@
 \startchapter{Experiments, Evaluation and Comparisons}
 \label{chapter:eval}
-This chapter presents results of the simulations and experiments done to evaluate the proposed solutions in both single and multi-hop transmission chapters. In order to gain confidence in the final results and eliminate the unwanted errors, all parameters are measured with extensive iterations and averaging. Wherever possible, comparisons have been made with other widely used algorithms to better illustrate the contribution of this thesis. 
+This chapter presents results of the simulations and experiments done to evaluate the proposed solutions in both single and multi-hop transmission chapters. In order to gain confidence in the final results and eliminate unwanted errors, all parameters are measured with extensive iterations and averaging. Wherever possible, comparisons have been made with other widely used algorithms to better illustrate the contribution of this thesis. 
 
 \section{RSS-Based Grouping Strategy}
 
@@ -21,18 +21,18 @@ In Fig. \ref{fig:variance}, we can see that the standard deviation of the number
 
 
 
-\begin{figure} [!tbp]
+\begin{figure}
   \centering
-  \subfloat[][Average $D_m$ over all groups]{\includegraphics[width=.25\textwidth]{figures/final_metric1}%
+  \subfloat[][Average $D_m$ over all groups]{\includegraphics[width=.5\textwidth]{figures/final_metric1}%
   \label{fig:meansum}}
-  \subfloat[][Standard deviation of the number of nodes in different groups]{\includegraphics[width=.25\textwidth]{figures/final_metric2}%
+  \subfloat[][Standard deviation of the number of nodes in different groups]{\includegraphics[width=.5\textwidth]{figures/final_metric2}%
   \label{fig:variance}}
   \caption{Grouping performance metrics}
   \label{fig:metricx}
 \end{figure}
 
 \iffalse
-\begin{figure} [!tbp]
+\begin{figure} 
   \centering
   \includegraphics[width=.95\textwidth]{figures/final_metric2}
   \caption{Simulation result for standard deviation of the number of nodes in different groups}
@@ -48,7 +48,7 @@ With the simulation results following analytical results, our assumption in sect
 %the probability that a node's distance to its group head is larger that R becomes smaller.
 %Probability of having hidden terminal versus number of group for a constant range ,for avg-power based and random grouping schemes is shown in figure \ref{fig:prob2}
 
-\begin{figure} [!tbp]
+\begin{figure}
   \centering
   \subfloat[][]{\includegraphics[width=.47\textwidth]{figures/final_probability_fixedM}%
   \label{fig:prob}}
@@ -60,7 +60,7 @@ With the simulation results following analytical results, our assumption in sect
 
 
 \iffalse
-\begin{figure} [!tbp]
+\begin{figure}
   \centering
   \includegraphics[width=.95\textwidth]{figures/final_probability_fixedM}
   \caption{Probability of two nodes, within a group, in the sensing range of each other}
@@ -70,7 +70,7 @@ With the simulation results following analytical results, our assumption in sect
 Fig. \ref{fig:prob2} shows the probability of two nodes in the same group being in each other's sensing range when all nodes' sensing range is fixed and the number of groups changes. This probability does not change with the number of groups for random grouping because nodes in the same group can still be anywhere in the coverage area and their distance still follows the same PDF. Though in case of the RSS-based grouping algorithm, a larger number of groups results in a higher probability for group members to be in the sensing range of each other because it makes the Voronoi cells smaller.    
 
 \iffalse
-\begin{figure} [!tbp]
+\begin{figure}
   \centering
   \includegraphics[width=.95\textwidth]{figures/final_probablity_fixedR_analysis}
   \caption{Probability of two nodes, within a group, in the sensing range of each other}
@@ -80,19 +80,19 @@ Fig. \ref{fig:prob2} shows the probability of two nodes in the same group being 
 
 Fig. \ref{fig:throughput} shows the throughput simulation result for different grouping schemes along with k-means clustering algorithm using NS-2. Table \ref{table:throughput} shows the parameter setting for simulations used in this section. Other common settings such as PHY and MAC header are set according to the IEEE 802.11 standard \cite{wlan2011}. The payload size is set to be low considering the IoT applications such as smart meter measurement reporting and all nodes are using RTS/CTS mechanism. Only the uplink traffic is considered and a non-collided transmission is assumed to be successful which that means the PHY layer BER is not considered. 
 
- In Fig. \ref{fig:throughput}, the throughput for random scheme is very low because the time for a single packet transmission is more than the largest back off window (1024 slots) and almost any transmission would be interrupted when there is a few active nodes who are hidden terminals. In other words, \iffalse in a saturated traffic scenario, \fi a node with a hidden terminal may hardly success in transmitting a packet to the AP without collision.
-
-This figure also shows the limited cost that RSS-based grouping pays due to the higher standard deviation of number of nodes in each group. The throughput using the proposed RSS-based grouping is close to that using the centralized K-mean solution. On the other hand, random grouping has much worse performance due to the hidden terminal problem even when the sensing range is as high as 1500m. Note that the theoretical sensing range without considering the shadowing effect may be much higher than the practical sensing range, so grouping considering the location is important to avoid hidden terminal and improve network performance.
-\begin{figure} [!tbp]
+\begin{figure} 
   \centering
   \includegraphics[width=.95\textwidth]{figures/throughput}
   \caption{Throughput of Uplink traffic}
   \label{fig:throughput}
 \end{figure}
 
+ In Fig. \ref{fig:throughput}, the throughput for random scheme is very low because the time for a single packet transmission is more than the largest back off window (1024 slots) and almost any transmission would be interrupted when there is a few active nodes who are hidden terminals. In other words, \iffalse in a saturated traffic scenario, \fi a node with a hidden terminal may hardly success in transmitting a packet to the AP without collision.
+
+This figure also shows the limited cost that RSS-based grouping pays due to the higher standard deviation of number of nodes in each group. The throughput using the proposed RSS-based grouping is close to that using the centralized K-mean solution. On the other hand, random grouping has much worse performance due to the hidden terminal problem even when the sensing range is as high as 1500m. Note that the theoretical sensing range without considering the shadowing effect may be much higher than the practical sensing range, so grouping considering the location is important to avoid hidden terminal and improve network performance.
 
 
-\begin{table}[!t]
+\begin{table}
 % increase table row spacing, adjust to taste
 %\renewcommand{\arraystretch}{1.3}
 %if using array.sty, it might be a good idea to tweak the value of
@@ -126,11 +126,8 @@ CW max & 1023 \\
 
 
 
-
-
-
-\section{PNC evaluations}
-This section, presents the simulation and experimental results for the PNC transmission. Since the real gain of PNC can been seen in multi-hop transmissions, the same implementation is used for measuring performance parameters in a Multi-hop Physical Layer Network Coding(MPNC). The main MPNC network design used for multi-hop experiments is adopted from \cite{zhang2017cross}. Then using asynchronous experiments the same two hop performance parameters are measured for multi-hop PNC too. 
+\section{SDR Implementation of PNC}
+This section, presents the simulation and experimental results for the PNC transmission. Since the real gain of PNC can been seen in multi-hop transmissions, the same implementation is used for measuring performance parameters in a Multi-hop Physical Layer Network Coding (MPNC). The main MPNC network design used for multi-hop experiments is adopted from \cite{zhang2017cross}. Then using asynchronous experiments the same two hop performance parameters are measured for multi-hop PNC too. 
 
 \subsection{Testbed Experiments}
 
@@ -139,11 +136,6 @@ USRP N210 sets with XCVR2450 daughterboards are used to run the PNC experiments.
 The carrier frequency is chosen as $2.45$~GHz. The length of the Sync preamble is $64$ symbols and the $SpS$ used in the experiments is four. 
 %When the number of hops is larger than two, the experiment is ran in an asynchronous manner in order to have the right SINR.
 
-\begin{figure}
-    \centering
-    \includegraphics[width=0.95\textwidth]{figures/testbed}
-    \caption{Testbed, two-hop scenario.}\label{fig:twohoptestbed}
-\end{figure}
 
 \subsubsection{BER, two-hop}
 To begin with, we first built a two-hop testbed where two sources A and B exchange the information through a relay, as shown in Fig.~\ref{fig:twohoptestbed}. 
@@ -152,17 +144,12 @@ Fig.~\ref{fig:e2e_ber} (a) and (b) shows the BER in the MA communications and th
 %Note that for many machine-type communications with the small-packet feature, packet payload size is quite small, so they fit well with the PNC solutions. 
 A somewhat surprising resul in Fig.~\ref{fig:e2e_ber} (a) is that there is a small drop of BER around 150-bit block length. This is because, due to CFO, the phase difference of the two transmissions superimposed at the relay changes periodically. From  Sec.~\ref{sec:e2eberana}, BER with different phase shift is slightly different. After 100-bit was sent, the phase shift returns to the area corresponding to low BER.  %After an entire cycle, it comes close to the signal again.
 
-\begin{figure*}
-\centering
-\begin{tabular}{ccc}
-    \includegraphics[width=0.33\textwidth]{figures/BER_Payload_MA.eps} &
-    \includegraphics[width=0.33\textwidth]{figures/BER_Payload_e2e.eps}&
-     \includegraphics[width=0.33\textwidth]{figures/cdf}\\
-      (a) MA  transmission BER &    (b) End-to-end BER & (c) MPNC vs. ANC
-      \end{tabular}
-       \caption{BER performance, two-hop.}
-    \label{fig:e2e_ber}
-\end{figure*}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.95\textwidth]{figures/testbed}
+    \caption{Testbed, two-hop scenario.}\label{fig:twohoptestbed}
+\end{figure}
+
 %c: mohammad: add the results with 25 bits in. what is the unit of x-axis? bits or bytes? add the unit to the figure.
 %                         enlarge the font size 
 %                         
@@ -176,17 +163,19 @@ A somewhat surprising resul in Fig.~\ref{fig:e2e_ber} (a) is that there is a sma
 
 The end-to-end BER results in Fig.~\ref{fig:e2e_ber} (b) include both the MA transmissions and the broadcast transmissions from the relay to the sources. We further compared the end-to-end BER performance of PNC with that of ANC reported in~\cite{katti2007embracing}. The relay in ANC uses an amplify-and-forward approach, instead of the mapping function. From Fig.~\ref{fig:e2e_ber} (c),  MPNC slightly outperforms ANC, from the USRP testbed experiments. In general, the performance of amplify-and-forward degrades in the low SINR region. 
 
-\subsubsection{Multi-hop performance}
-Next, we extended the two-hop scenario to multi-hop scenario, where the number of hops varied from two to five. The transmission and reception of the relays for multiple hops behave similarly as that in the two-hop case, except that the mutual interference  and the error propagation problem will lead to a higher BER.
+\begin{figure*}
+\centering
+\begin{tabular}{ccc}
+    \includegraphics[width=0.33\textwidth]{figures/BER_Payload_MA.eps} &
+    \includegraphics[width=0.33\textwidth]{figures/BER_Payload_e2e.eps}&
+     \includegraphics[width=0.33\textwidth]{figures/cdf}\\
+      (a) MA  transmission BER &    (b) End-to-end BER & (c) MPNC vs. ANC
+      \end{tabular}
+       \caption{BER performance, two-hop.}
+    \label{fig:e2e_ber}
+\end{figure*}
 
-Figs.~\ref{fig:experiment_ber} (a) and (b) compare the end-to-end BER and normalized throughput, respectively of MPNC and that with hop-by-hop relay. 
-The normalized throughput is the number of bits successfully received by the destination per symbol duration. 
-From the figures, although the end-to-end BER of MPNC is much higher than that of hop-by-hop relaying, due to both the worse BER performance in MA transmissions and the error propagation problem (i.e., a single MA transmission error may affect multiple end-to-end bit errors in a multi-relay path),  the end-to-end throughput of MPNC is much higher
-than that of hop-by-hop relay. Using the inexpensive USRP testbed, it is encouraging to notice that the performance gain of MPNC ranges from $75\%$ to $80\%$ for the two- and five-hop cases, and around $150\%$ for the three- and four-hop cases. 
-
-
-%comparing the two graphs reveals that although end to end BER of MPNC can go much higher than hop by hop relaying, due to its nature of exchanging two packets in two slots with any number of hops, it can always maintain a throughput higher than hop by hop relaying. The throughput of MPNC is also compared to other mechanisms of multi-hop relaying in \ref{sub:throughput} using simulation results.
-\begin{figure}
+\begin{figure} 
 \centering
 \begin{tabular}{cc}
    \hspace*{-12pt} \includegraphics[width=0.47\textwidth]{figures/ber_bar_160}&
@@ -197,6 +186,18 @@ than that of hop-by-hop relay. Using the inexpensive USRP testbed, it is encoura
        \caption{Multi-hop performance. Multi-hop End-to-End BER are calculated using formulations outlined in table 5.1 of \cite{zhang2017cross}.} %(payload = 160 bits)}
     \label{fig:experiment_ber}
 \end{figure}
+
+\subsubsection{Multi-hop performance}
+Next, we extended the two-hop scenario to multi-hop scenario, where the number of hops varied from two to five. The transmission and reception of the relays for multiple hops behave similarly as that in the two-hop case, except that the mutual interference  and the error propagation problem will lead to a higher BER.
+
+Figs.~\ref{fig:experiment_ber} (a) and (b) compare the end-to-end BER and normalized throughput, respectively of MPNC and that with hop-by-hop relay. 
+The normalized throughput is the number of bits successfully received by the destination per symbol duration. 
+From the figures, although the end-to-end BER of MPNC is much higher than that of hop-by-hop relaying, due to both the worse BER performance in MA transmissions and the error propagation problem (i.e., a single MA transmission error may affect multiple end-to-end bit errors in a multi-relay path),  the end-to-end throughput of MPNC is much higher
+than that of hop-by-hop relay. Using the inexpensive USRP testbed, it is encouraging to notice that the performance gain of MPNC ranges from $75\%$ to $80\%$ for the two- and five-hop cases, and around $150\%$ for the three- and four-hop cases. 
+
+
+%comparing the two graphs reveals that although end to end BER of MPNC can go much higher than hop by hop relaying, due to its nature of exchanging two packets in two slots with any number of hops, it can always maintain a throughput higher than hop by hop relaying. The throughput of MPNC is also compared to other mechanisms of multi-hop relaying in \ref{sub:throughput} using simulation results.
+
   
 
 
@@ -244,6 +245,8 @@ The results suggest that when $\alpha$ is large (e.g., $\ge3$), we can apply MPN
 
 \subsubsection{Goodput performance comparison} % (fold)
 \label{sub:throughput}
+
+
 In this section, the goodput of MPNC is studied and also compared with the other state-of-the-art solutions. As we compare the performance of different solutions with the same number of hops, different from the last subsection, here, the transmission power of each node and the hop distance remains constant. %For MPNC, Hop by hop, and Full Duplex solutions, we
 The goodput measures the number of error-free packets received per slot.
 % is defined as 
@@ -260,13 +263,9 @@ Note that with the infinite error propagation problem, an error detection coding
 %   Th_{PNC}\sum_{k=1}^{\infty} \frac{2k}{S_k} P_{s,k}^{PNC} P_{e}^{PNC},
 % \end{equation}
 % where $P_{s,k}^{PNC}$ the probability of successfully exchanging $k$ packets using PNC method and $P_{e}^{PNC}$ is the probability of an error happening while exchanging two packets.
-\begin{figure}
-    \centering
-    \includegraphics[width=0.95\textwidth]{figures/sim_th_alpha4_snrh2h9BL256}
-    \caption{Goodput, per-hop SNR $=9$, $\alpha=4$, Payload=$256$ bits.}
-    \label{fig:throughput}
-\end{figure}
-The goodputs  are shown in Fig.~\ref{fig:throughput}. Comparing with the other state-of-the-art algorithms, MPNC has always a higher goodput and can maintain its performance as the number of hops increases. The goodput gains of MPNC over hop-by-hop relay, full-duplex, and PNC is about 3x times, $33\%$, and $68\%$ when the number of hops is as high as eight. Also, from the figure, the goodput of MPNC remains close to 0.9 packet/slot when the number of hops varied from two to eight, showing that it is quite scalable to long paths. 
+
+
+The goodputs  are shown in Fig.~\ref{fig:throughputPNC}. Comparing with the other state-of-the-art algorithms, MPNC has always a higher goodput and can maintain its performance as the number of hops increases. The goodput gains of MPNC over hop-by-hop relay, full-duplex, and PNC is about 3x times, $33\%$, and $68\%$ when the number of hops is as high as eight. Also, from the figure, the goodput of MPNC remains close to 0.9 packet/slot when the number of hops varied from two to eight, showing that it is quite scalable to long paths. 
 
 % subsection throughput (end)
 
@@ -279,18 +278,13 @@ Fig.~\ref{fig:cfo} (a) shows the impacts of CFOs on the BER performance.
  %Average CFO compensation is when the average value of CFO is used for both $f_1$ and $f_2$.
  % The key result is that although estimating CFO of both nodes with their average and attempting to remove its effect by a multiplication can have a good performance with low CFO values, the algorithm proposed in this paper can maintain a better and lower BER as payload %length increases. The reason for that is because the average CFO method does not remove the effect of CFO completely and a small rotating phase remains in both signals which causes a higher number of errors for large payload lengths.
 
-
-
 \begin{figure}
     \centering
-  \begin{tabular}{cc}  
-    \includegraphics[width=0.47\textwidth]{figures/cfo2} &
-     \includegraphics[width=0.47\textwidth]{figures/locations2_new}\\
-     (a) CFO compensation & (b) Channel estimation error
-     \end{tabular}
-    \caption{Effect of CFO and channel estimation error on BER. }
-    \label{fig:cfo}
+    \includegraphics[width=0.95\textwidth]{figures/sim_th_alpha4_snrh2h9BL256}
+    \caption{Goodput, per-hop SNR $=9$, $\alpha=4$, Payload=$256$ bits.}
+    \label{fig:throughputPNC}
 \end{figure}
+
 % subsection effect_cfo_on_ber (end)
 
 
@@ -310,3 +304,14 @@ estimation errors.
 % why the 0.8 curve and 0.9 curve cross at 100 bit? 
 
 % subsection effect_of_channel_estimation (end)
+
+\begin{figure} 
+    \centering
+  \begin{tabular}{cc}  
+    \includegraphics[width=0.47\textwidth]{figures/cfo2} &
+     \includegraphics[width=0.47\textwidth]{figures/locations2_new}\\
+     (a) CFO compensation & (b) Channel estimation error
+     \end{tabular}
+    \caption{Effect of CFO and channel estimation error on BER. }
+    \label{fig:cfo}
+\end{figure}

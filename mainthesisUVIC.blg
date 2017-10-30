@@ -6,6 +6,7 @@ A level-1 auxiliary file: chapters/3/chapter_single.aux
 A level-1 auxiliary file: chapters/4/chapter_multi.aux
 A level-1 auxiliary file: chapters/6/chapter_evaluation.aux
 A level-1 auxiliary file: chapters/7/chapter_conclusion.aux
+A level-1 auxiliary file: chapters/appendix/chapter_app.aux
 The style file: plain.bst
 Database file #1: UvicThesis.bib
 Warning--entry type for "wlan2011" isn't style-file defined
@@ -19,7 +20,7 @@ Warning--empty year in Req80211ah
 Warning--empty school in zhang2017cross
 You've used 31 entries,
             2118 wiz_defined-function locations,
-            682 strings with 9984 characters,
+            683 strings with 10017 characters,
 and the built_in function-call counts, 12328 in all, are:
 = -- 1226
 > -- 611
