@@ -1,23 +1,23 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces A simple illustration of hidden terminal problem}}{6}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Time diagram of RSS-based grouping algorithm, $\text {Beacon}^{\ast }$ is a BF initiating the grouping scheme. As it is shown in the figure, a GUP can be as large as several beacon intervals. Essentially it can last as long as the AP is satisfied with the throughput performance.}}{11}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces A sample grouping showing how nodes are categorized location-wise using RSS-based grouping}}{12}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Two nodes and group head in one Voronoi cell}}{14}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Simple three node linear network. Nodes $A$ and $B$ have packets to exchange and node $R$ acts as relay}}{7}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Traditional relaying. First, node $A$ transmits its packet to the relay, then the relay forwards $A$'s packet to $B$, then in time slot three, node B sends its packet to the relay, which is then forwarded to node $A$ in time slot four.}}{8}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Straightforward network coding. First, $A$ transmits its packet to relay, then $B$ transmits its message to the relay, then relay calculates $Z_1=X_1 \oplus Y_1$ and broadcasts it to $A$ and $B$ in time slot three, which can then decode the other nodes message by another XOR.}}{9}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Physical layer network coding. In time slot one, $A$ and $B$ will transmit their packets to the relay at the same time (multiple access phase). The relay, using its mapping function extracts XOR of $A$ and $B$'s packets and broadcasts it to them in time slot two (broadcast phase).}}{9}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Simple three node linear network. Nodes $A$ and $B$ have packets to exchange and node $R$ acts as relay}}{17}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Traditional relaying. First, node $A$ transmits its packet to the relay, then the relay forwards $A$'s packet to $B$, then in time slot three, node B sends its packet to the relay, which is then forwarded to node $A$ in time slot four.}}{17}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Straightforward network coding. First, $A$ transmits its packet to relay, then $B$ transmits its message to the relay, then relay calculates $Z_1=X_1 \oplus Y_1$ and broadcasts it to $A$ and $B$ in time slot three, which can then decode the other nodes message by another XOR.}}{18}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Physical layer network coding. In time slot one, $A$ and $B$ will transmit their packets to the relay at the same time (multiple access phase). The relay, using its mapping function extracts XOR of $A$ and $B$'s packets and broadcasts it to them in time slot two (broadcast phase).}}{18}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Receiver chain.}}{22}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Time diagram of RSS-based grouping algorithm, $\text {Beacon}^{\ast }$ is a BF initiating the grouping scheme. As it is shown in the figure, a GUP can be as large as several beacon intervals. Essentially it can last as long as the AP is satisfied with the throughput performance.}}{15}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces A sample grouping showing how nodes are categorized location-wise using RSS-based grouping}}{17}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Two nodes and group head in one Voronoi cell}}{19}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Grouping performance metrics}}{22}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Probability of two nodes, within a group, being in the sensing range of each other}}{23}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Throughput of Uplink traffic}}{24}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Grouping performance metrics}}{25}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Probability of two nodes, within a group, being in the sensing range of each other}}{26}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Throughput of Uplink traffic}}{27}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Testbed, two-hop scenario.}}{29}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces BER performance, two-hop.}}{30}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Multi-hop performance. Multi-hop End-to-End BER are calculated using formulations outlined in table 5.1 of \cite {zhang2017cross}.}}{30}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Goodput, per-hop SNR $=9$, $\alpha =4$, Payload=$256$ bits.}}{32}
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Effect of CFO and channel estimation error on BER. }}{33}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Receiver chain.}}{29}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Testbed, two-hop scenario.}}{32}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces BER performance, two-hop.}}{33}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Multi-hop performance. Multi-hop End-to-End BER are calculated using formulations outlined in table 5.1 of \cite {zhang2017cross}.}}{33}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Goodput, per-hop SNR $=9$, $\alpha =4$, Payload=$256$ bits.}}{35}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Effect of CFO and channel estimation error on BER. }}{36}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

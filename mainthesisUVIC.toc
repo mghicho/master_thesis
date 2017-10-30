@@ -1,55 +1,56 @@
 \contentsline {chapter}{Supervisory Committee}{ii}
 \contentsline {chapter}{Abstract}{iii}
-\contentsline {chapter}{Table of Contents}{v}
-\contentsline {chapter}{List of Tables}{vii}
-\contentsline {chapter}{List of Figures}{viii}
-\contentsline {chapter}{Acknowledgements}{x}
-\contentsline {chapter}{Dedication}{xi}
+\contentsline {chapter}{Table of Contents}{iv}
+\contentsline {chapter}{List of Tables}{vi}
+\contentsline {chapter}{List of Figures}{vii}
+\contentsline {chapter}{Acknowledgements}{ix}
+\contentsline {chapter}{Dedication}{x}
 \contentsline {chapter}{\numberline {1}Introduction}{1}
 \contentsline {section}{\numberline {1.1}Research Objectives and Contributions}{2}
 \contentsline {subsection}{\numberline {1.1.1}RSS-Based Grouping Strategy}{2}
-\contentsline {section}{\numberline {1.2}Practical Physical Layer Network Coding Implementation}{3}
-\contentsline {section}{\numberline {1.3}Dissertation Organization}{3}
-\contentsline {section}{\numberline {1.4}Bibliographic Notes}{3}
-\contentsline {chapter}{\numberline {2}Single Hop Transmission}{4}
-\contentsline {section}{\numberline {2.1}IEEE 802.11ah Standrad}{5}
-\contentsline {subsection}{\numberline {2.1.1}Physical Layer of IEEE 802.11ah}{5}
+\contentsline {subsection}{\numberline {1.1.2}Practical Physical Layer Network Coding Implementation}{3}
+\contentsline {section}{\numberline {1.2}Dissertation Organization}{3}
+\contentsline {section}{\numberline {1.3}Bibliographic Notes}{3}
+\contentsline {chapter}{\numberline {2}Background}{4}
+\contentsline {section}{\numberline {2.1}IEEE 802.11ah Standrad}{4}
+\contentsline {subsection}{\numberline {2.1.1}Physical Layer of IEEE 802.11ah}{4}
 \contentsline {subsection}{\numberline {2.1.2}Medium Access Control layer of IEEE 802.11ah}{5}
-\contentsline {section}{\numberline {2.2}The Hidden Terminal Problem}{6}
-\contentsline {section}{\numberline {2.3}Related Works}{7}
-\contentsline {section}{\numberline {2.4}Rss-Based Grouping Strategy}{8}
-\contentsline {subsection}{\numberline {2.4.1}Motivation}{8}
-\contentsline {subsection}{\numberline {2.4.2}System Model}{9}
-\contentsline {subsection}{\numberline {2.4.3}RSS-Based Grouping}{10}
-\contentsline {subsection}{\numberline {2.4.4}Implementation Issues}{11}
-\contentsline {subsection}{\numberline {2.4.5}Analytical Model}{12}
-\contentsline {chapter}{\numberline {3}Multi-Hop Transmission}{16}
-\contentsline {section}{\numberline {3.1}Physical Layer Network Coding}{17}
-\contentsline {section}{\numberline {3.2}Implementation}{19}
-\contentsline {subsection}{\numberline {3.2.1}Signal formulation}{20}
-\contentsline {subsection}{\numberline {3.2.2}Timing recovery}{21}
-\contentsline {subsection}{\numberline {3.2.3}MA receiver, CFO estimation}{22}
-\contentsline {subsection}{\numberline {3.2.4}MA receiver, preamble detection}{23}
-\contentsline {chapter}{\numberline {4}Experiments, Evaluation and Comparisons}{24}
-\contentsline {section}{\numberline {4.1}RSS-Based Grouping Strategy}{24}
-\contentsline {section}{\numberline {4.2}SDR Implementation of PNC}{28}
-\contentsline {subsection}{\numberline {4.2.1}Testbed Experiments}{28}
-\contentsline {subsubsection}{Experiment setting}{28}
-\contentsline {subsubsection}{BER, two-hop}{28}
-\contentsline {subsubsection}{Multi-hop performance}{30}
-\contentsline {subsection}{\numberline {4.2.2}Simulation Results}{31}
-\contentsline {subsubsection}{Goodput performance comparison}{31}
-\contentsline {subsubsection}{Effect of CFO on BER}{32}
-\contentsline {subsubsection}{Effect of Channel Estimation Error on BER}{33}
-\contentsline {chapter}{\numberline {5}Conclusions}{34}
-\contentsline {chapter}{\numberline {A}Additional Information}{36}
-\contentsline {section}{\numberline {A.1}Installing out of tree modules on Mac OS}{36}
-\contentsline {subsubsection}{How to find the above address?}{37}
-\contentsline {subsection}{\numberline {A.1.1}UHD commands}{37}
-\contentsline {subsection}{\numberline {A.1.2}Adding new modules to gnuradio in Mac OS}{37}
-\contentsline {subsection}{\numberline {A.1.3}Adding a library for linking}{38}
-\contentsline {subsection}{\numberline {A.1.4}OOT modules in Ubuntu}{38}
-\contentsline {subsection}{\numberline {A.1.5}Blocks with Multiple Inputs}{39}
-\contentsline {section}{\numberline {A.2}Working with \textit {tagged\_stream\_blocks}}{39}
-\contentsline {section}{\numberline {A.3}Positioning and Tabs with QT}{39}
-\contentsline {chapter}{Bibliography}{40}
+\contentsline {section}{\numberline {2.2}The Hidden Terminal Problem}{5}
+\contentsline {section}{\numberline {2.3}Physical Layer Network Coding}{7}
+\contentsline {section}{\numberline {2.4}Software Defined Radio}{10}
+\contentsline {chapter}{\numberline {3}Single Hop Transmission}{11}
+\contentsline {section}{\numberline {3.1}Related Works}{12}
+\contentsline {section}{\numberline {3.2}Rss-Based Grouping Strategy}{13}
+\contentsline {subsection}{\numberline {3.2.1}Overview}{13}
+\contentsline {subsection}{\numberline {3.2.2}System Model}{13}
+\contentsline {subsection}{\numberline {3.2.3}RSS-Based Grouping}{14}
+\contentsline {subsection}{\numberline {3.2.4}Implementation Issues}{16}
+\contentsline {subsection}{\numberline {3.2.5}Analytical Model}{16}
+\contentsline {section}{\numberline {3.3}Performance Evaluation}{21}
+\contentsline {chapter}{\numberline {4}Multi-Hop Transmission}{26}
+\contentsline {section}{\numberline {4.1}Implementation}{27}
+\contentsline {subsection}{\numberline {4.1.1}Signal formulation}{27}
+\contentsline {subsection}{\numberline {4.1.2}Timing recovery}{29}
+\contentsline {subsection}{\numberline {4.1.3}MA receiver, CFO estimation}{29}
+\contentsline {subsection}{\numberline {4.1.4}MA receiver, preamble detection}{30}
+\contentsline {section}{\numberline {4.2}Performance Evaluations}{31}
+\contentsline {subsection}{\numberline {4.2.1}Testbed Experiments}{31}
+\contentsline {subsubsection}{Experiment setting}{31}
+\contentsline {subsubsection}{BER, two-hop}{31}
+\contentsline {subsubsection}{Multi-hop performance}{33}
+\contentsline {subsection}{\numberline {4.2.2}Simulation Results}{34}
+\contentsline {subsubsection}{Goodput performance comparison}{34}
+\contentsline {subsubsection}{Effect of CFO on BER}{35}
+\contentsline {subsubsection}{Effect of Channel Estimation Error on BER}{36}
+\contentsline {chapter}{\numberline {5}Conclusions}{37}
+\contentsline {chapter}{\numberline {A}Additional Information}{39}
+\contentsline {section}{\numberline {A.1}Installing out of tree modules on Mac OS}{39}
+\contentsline {subsubsection}{How to find the above address?}{40}
+\contentsline {subsection}{\numberline {A.1.1}UHD commands}{40}
+\contentsline {subsection}{\numberline {A.1.2}Adding new modules to gnuradio in Mac OS}{40}
+\contentsline {subsection}{\numberline {A.1.3}Adding a library for linking}{41}
+\contentsline {subsection}{\numberline {A.1.4}OOT modules in Ubuntu}{41}
+\contentsline {subsection}{\numberline {A.1.5}Blocks with Multiple Inputs}{42}
+\contentsline {section}{\numberline {A.2}Working with \textit {tagged\_stream\_blocks}}{42}
+\contentsline {section}{\numberline {A.3}Positioning and Tabs with QT}{42}
+\contentsline {chapter}{Bibliography}{43}
