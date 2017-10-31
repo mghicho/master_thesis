@@ -1,17 +1,15 @@
 \startchapter{Multi-Hop Transmission}
 \label{chapter:multi}
 
-As new IoT applications emerge, the need for reliable multi-hop transmission between sensors is becoming more and more obvious. In many sensor network applications data can not be gathered using a single sink node and it has to be relayed with the help of other nodes. Linear sensor networks are one of the main applications with this criteria. They can be used for monitoring long highways, railroads, skyscrapers and walls. In many of these applications using wire to connect sensors is either simply impossible or very expensive to deploy and maintain.
+\section{Overview}
 
-Multi-hop relaying has always been a bottle neck for wireless communications. As the number of hops grows, the end to end throughput suffers drastically. A significant research effort has been employed to improve the throughput and reliability of multi-hop transmissions. Recognizing interference as the main obstacle in multi-hop transmission, many new technologies have emerged. Technologies such as successive interference cancellation \cite{alvandi2015delay}, multi-packet detection and collision resolution using zigzag \cite{mzig}, interference alignment \cite{4567443, 7218598}, and full-duplex (FD) radios \cite{fullduplex} have all tried to use interference and broadcast nature of wireless channel in their favor.
-
-One of the technologies that is promising for multi-hop sensor network applications is physical layer network coding. It can increase the end to end throughput by decreasing the number of time slots that are required for a multi-hop transmission while maintaining an acceptable error rate. In the following sections, first the concept of PNC is explained and then our contribution is elaborated.
+One of the technologies that is promising for multi-hop sensor network applications is physical layer network coding. It can increase the end to end throughput by decreasing the number of time slots that are required for a multi-hop transmission while maintaining an acceptable error rate. %In the following sections, first the concept of PNC is explained and then our contribution is elaborated.
 
 
-While the theory of PNC technology has been around for a while, it's implementation and real-life applications have lacked behind. A practical PNC implementation has multiple challenges, most notably Carrier-Frequency Offsets (CFO) and timing synchronization. In the Multiple Access (MA) phase, the relay has to receive a signal from two sources, tracking the CFO from two transmitters while their signals is superimposed is one of the main difficulties. Existing implementations require an interference free part in each signal which comes with a high overhead and is restrictive for multi-hop scenarios. This thesis proposes a novel idea to overcome the CFO challenge and have the relay correctly receive the sum signal in MA phase. The following sections explain design and implementation of a Software Defined Radio (SDR) PNC communication system on the GNURadio platform. The design is then implemented on USRP testbed. Extensive simulations and experiments have been done to investigate the proposed implementation and its feasibility. The results are presented in chapter \ref{chapter:eval}.
+Providing a solution for implementation challenges of PNC, feasibility of a real-life PNC system is proven by a software defined radio implementation on GNURadio platform. Different performance parameters are then measured in both simulation and experiment. 
 
 \section{Implementation}
-We implemented the proposed MPNC on USRP and GNURadio to build the multi-hop wireless testbed.
+We implemented physical layer network coding on USRP and GNURadio to build the multi-hop wireless testbed.
 % This section presents the details of our implementation. There are two types of transmissions in the system, the multi-access (MA) transmission and the single-hop transmission. 
 For MPNC, the transmitter and receiver in the single-hop transmission can be made using regular transmission and reception chains. In this work, standard BPSK blocks of GNURadio are used for all steps of communication, modulation, timing recovery, phase tracking and demodulation.
 
@@ -26,7 +24,7 @@ smaller than the symbol duration (e.g., 802.11 OFDM symbol time of 4 $\mu$s).
 %Different from point-to-point transmissions or asynchronous packet collisions, in MPNC, signals with different carrier frequency offset are superimposed at the receiver simultaneously, which makes the estimation and compensation of carrier frequency offset and detection of preamble extremely challenging. Our solutions to these challenges are presented in this section.
 %The challenges and our solutions used in the testbed are presented below.
 
-%\begin{figure}
+%\begin{figure} [th]
 %    \centering
 %    \includegraphics[width=0.4\textwidth]{figure/ma_phase}
 %    \caption{A generic MA transmission consists of two nodes transmitting to a relay at the same time}\label{ma_phase}
@@ -68,7 +66,7 @@ Each branch is then used for preamble detection purposes and the result is conne
 
 
 
-\begin{figure}
+\begin{figure} [th]
     \centering
     \includegraphics[width=0.95\textwidth]{figures/pncreceiver.eps}
     \caption{Receiver chain.} \label{fig:pncreceiver}
@@ -80,7 +78,7 @@ To help the receiver estimate CFOs and detect MA transmissions, each frame begin
 %The sync parts are shown in Fig.~\ref{syncs}. 
 In our work, the Sync preambles for node A and B are ``1010... 10" and ``0101...01", respectively, which is similar to the packet structure used in the IEEE 802.11 FH PHY.
 
-%\begin{figure}
+%\begin{figure} [th]
 %    \centering
 %    \includegraphics[width=0.3\textwidth]{figure/packet}
 %    \caption{Multiple access phase packet structure}\label{ma_packet}
@@ -153,14 +151,14 @@ The frequency and phase offsets are then found by a solving a linear regression 
 where $p_{1,i}^{\prime}$ and $p_{2,i}^{\prime}$ are unwrapped versions of  $p_{1,i}$ and $p_{2,i}$, respectively.
 \fi
 %
-%\begin{figure}
+%\begin{figure} [th]
 %    \centering
 %    \includegraphics[width=0.3\textwidth]{figure/syncs}
 %    \caption{Sync preambles. (a) Sync preamble sent by node A . (b) Sync preamble sent by node B}\label{syncs}
 %\end{figure}
 %
 %
-%\begin{figure}
+%\begin{figure} [th]
 %    \centering
 %    \includegraphics[width=0.3\textwidth]{figure/sfds}
 %    \caption{SFDs. (a) SFD preamble sent by node A. (b) SFD preamble sent by node B. (c) SFD preamble expected in the relay} \label{fig:sfd}
@@ -187,13 +185,13 @@ The carrier frequency is chosen as $2.45$~GHz. The length of the Sync preamble i
 
 
 \subsubsection{BER, two-hop}
-To begin with, we first built a two-hop testbed where two sources A and B exchange the information through a relay, as shown in Fig.~\ref{fig:twohoptestbed}. 
+To begin with, we first built a two-hop testbed where two sources A and B exchange the information through a relay, as shown in Figure~\ref{fig:twohoptestbed}. 
 
 Fig.~\ref{fig:e2e_ber} (a) and (b) shows the BER in the MA communications and the end-to-end BER for the two-hop case, respectively. As anticipated, the BER performance deteriorates when the payload length increases, due to the non-stationary wireless channel and the CFOs. Thus, to maintain a low BER,  preambles could be repeated periodically.
 %Note that for many machine-type communications with the small-packet feature, packet payload size is quite small, so they fit well with the PNC solutions. 
-A somewhat surprising resul in Fig.~\ref{fig:e2e_ber} (a) is that there is a small drop of BER around 150-bit block length. This is because, due to CFO, the phase difference of the two transmissions superimposed at the relay changes periodically. From  Sec.~\ref{sec:e2eberana}, BER with different phase shift is slightly different. After 100-bit was sent, the phase shift returns to the area corresponding to low BER.  %After an entire cycle, it comes close to the signal again.
+A somewhat surprising result in Fig.~\ref{fig:e2e_ber} (a) is that there is a small drop of BER around 150-bit block length. This is because, due to CFO, the phase difference of the two transmissions superimposed at the relay changes periodically. \iffalse From  Sec.~\ref{sec:e2eberana}, \fi BER with different phase shift is slightly different. After 100-bit was sent, the phase shift returns to the area corresponding to low BER.  %After an entire cycle, it comes close to the signal again.
 
-\begin{figure}
+\begin{figure} [th]
     \centering
     \includegraphics[width=0.95\textwidth]{figures/testbed}
     \caption{Testbed, two-hop scenario.}\label{fig:twohoptestbed}
@@ -203,7 +201,7 @@ A somewhat surprising resul in Fig.~\ref{fig:e2e_ber} (a) is that there is a sma
 %                         enlarge the font size 
 %                         
 
-%\begin{figure}
+%\begin{figure} [th]
 %    \centering
 %    \includegraphics[width=0.35\textwidth]{figure/cdf}
 %    \caption{End-to-end BER, MPNC vs. ANC \cite{katti2007embracing} }
@@ -212,7 +210,7 @@ A somewhat surprising resul in Fig.~\ref{fig:e2e_ber} (a) is that there is a sma
 
 The end-to-end BER results in Fig.~\ref{fig:e2e_ber} (b) include both the MA transmissions and the broadcast transmissions from the relay to the sources. We further compared the end-to-end BER performance of PNC with that of ANC reported in~\cite{katti2007embracing}. The relay in ANC uses an amplify-and-forward approach, instead of the mapping function. From Fig.~\ref{fig:e2e_ber} (c),  MPNC slightly outperforms ANC, from the USRP testbed experiments. In general, the performance of amplify-and-forward degrades in the low SINR region. 
 
-\begin{figure*}
+\begin{figure*} [th]
 \centering
 \begin{tabular}{ccc}
     \includegraphics[width=0.33\textwidth]{figures/BER_Payload_MA.eps} &
@@ -224,7 +222,7 @@ The end-to-end BER results in Fig.~\ref{fig:e2e_ber} (b) include both the MA tra
     \label{fig:e2e_ber}
 \end{figure*}
 
-\begin{figure} 
+\begin{figure} [th] 
 \centering
 \begin{tabular}{cc}
    \hspace*{-12pt} \includegraphics[width=0.47\textwidth]{figures/ber_bar_160}&
@@ -267,7 +265,7 @@ To evaluate and compare the performance of the proposed MPNC in controllable and
 In this subsection, we study the end-to-end performance considering different number of hops, aiming to identify the optimal number of hops. 
 For fair comparison, here, we let the total transmission power in any two continuous slots be $2E_b$, and all the nodes equally share the total transmission power. In other words, if the number of hops increases, the transmission power per node decreases accordingly. The nodes are located in a linear topology with equal distance for each hop.  The average received SNR of all links are proportional to $d^{-\alpha}$, where $d$ is the hop distance. %We studied the performance of MPNC under AWGN channel with different path-loss parameters.
 
-\begin{figure*}
+\begin{figure*} [th]
     \centering
     \subfloat[][$\alpha = 4$.]{\includegraphics[width=.34\textwidth]{figures/dmpnc_alpha_4_awgn.eps}}
     \subfloat[][$\alpha = 3$.]      {\includegraphics[width=.34\textwidth]{figures/dmpnc_alpha_3_awgn.eps}}
@@ -277,7 +275,7 @@ For fair comparison, here, we let the total transmission power in any two contin
 %c: haoyuan: change D-MPNC to MPNC in the figures, and change "lower bound" to "bound". 
 
 Since the end-to-end data exchange rate of PNC and MPNC remains the same no matter how many relays are used, we only need to compare the end-to-end BER performance. 
-The end-to-end BER results considering different number of relays and different path loss exponents are shown in Fig. \ref{ber-D-MPNC}. The X axis is the end-to-end $\text{SNR}_{ab}$(dB) by direct transmission (without any relay). The "Traditional PNC" curves are for the case with one relay only so the traditional PNC solution can be directly applied. 
+The end-to-end BER results considering different number of relays and different path loss exponents are shown in Fig. \ref{ber-D-MPNC}. The X axis is the end-to-end $\text{SNR}_{ab}$(dB) by direct transmission (without any relay). The \textit{Traditional PNC} curves are for the case with one relay only so the traditional PNC solution can be directly applied. 
 With $N$ relay(s), the transmission power per node is  less while the path loss also reduces. The mutual interference also increases when the number of relays increase. Therefore, there is a tradeoff, and the optimal number of hops largely depends on $\alpha$, typically  ranging  from $2$ to $6$~\cite{goldsmith2005wireless}. 
 %Given the end-to-end $\text{SNR}_{ab}$(dB) in (\ref{end-to-end-snr}) and the distance $d$(m) between the sources, the larger $\alpha$ is, the SINR(dB) of each hop in (\ref{sinr}) is larger by shortening the transmission path. Another impact is that a larger $\alpha$ reduces the impacts of the inference from other transmitting nodes to the receiver due to a larger path loss. The impacts of the path-loss parameter $\alpha$ is also studied in this section.
 
@@ -327,7 +325,7 @@ Fig.~\ref{fig:cfo} (a) shows the impacts of CFOs on the BER performance.
  %Average CFO compensation is when the average value of CFO is used for both $f_1$ and $f_2$.
  % The key result is that although estimating CFO of both nodes with their average and attempting to remove its effect by a multiplication can have a good performance with low CFO values, the algorithm proposed in this paper can maintain a better and lower BER as payload %length increases. The reason for that is because the average CFO method does not remove the effect of CFO completely and a small rotating phase remains in both signals which causes a higher number of errors for large payload lengths.
 
-\begin{figure}
+\begin{figure} [th]
     \centering
     \includegraphics[width=0.95\textwidth]{figures/sim_th_alpha4_snrh2h9BL256}
     \caption{Goodput, per-hop SNR $=9$, $\alpha=4$, Payload=$256$ bits.}
@@ -343,7 +341,7 @@ We studied the effect of channel estimation error %which can also be interpreted
 on end-to-end BER performance. In Fig.~\ref{fig:cfo} (b), $\delta$ represents the ratio of estimated channel gain and the real channel gain. From the figure, 
 overall, the BER increases when the channel estimation error increases,  while  the algorithm can maintain a reasonable BER even with $10\%$ to $20\%$
 estimation errors. 
-%\begin{figure}
+%\begin{figure} [th]
 %    \centering
 %    \includegraphics[width=0.25\textwidth]{figure/locations2_new}
 %    \caption{Effect of Channel Estimation Error on BER}
@@ -354,7 +352,7 @@ estimation errors.
 
 % subsection effect_of_channel_estimation (end)
 
-\begin{figure} 
+\begin{figure} [th] 
     \centering
   \begin{tabular}{cc}  
     \includegraphics[width=0.47\textwidth]{figures/cfo2} &

@@ -6,42 +6,46 @@
 \contentsline {chapter}{Acknowledgements}{ix}
 \contentsline {chapter}{Dedication}{x}
 \contentsline {chapter}{\numberline {1}Introduction}{1}
-\contentsline {section}{\numberline {1.1}Research Objectives and Contributions}{2}
-\contentsline {subsection}{\numberline {1.1.1}RSS-Based Grouping Strategy}{2}
-\contentsline {subsection}{\numberline {1.1.2}Practical Physical Layer Network Coding Implementation}{3}
-\contentsline {section}{\numberline {1.2}Dissertation Organization}{3}
-\contentsline {section}{\numberline {1.3}Bibliographic Notes}{3}
-\contentsline {chapter}{\numberline {2}Background}{4}
-\contentsline {section}{\numberline {2.1}IEEE 802.11ah Standrad}{4}
-\contentsline {subsection}{\numberline {2.1.1}Physical Layer of IEEE 802.11ah}{4}
-\contentsline {subsection}{\numberline {2.1.2}Medium Access Control layer of IEEE 802.11ah}{5}
-\contentsline {section}{\numberline {2.2}The Hidden Terminal Problem}{5}
-\contentsline {section}{\numberline {2.3}Physical Layer Network Coding}{7}
+\contentsline {section}{\numberline {1.1}Research Objectives and Contributions}{4}
+\contentsline {subsection}{\numberline {1.1.1}RSS-Based Grouping Strategy}{4}
+\contentsline {subsection}{\numberline {1.1.2}Practical Physical Layer Network Coding Implementation}{4}
+\contentsline {section}{\numberline {1.2}Dissertation Organization}{5}
+\contentsline {section}{\numberline {1.3}Bibliographic Notes}{5}
+\contentsline {chapter}{\numberline {2}Background}{6}
+\contentsline {section}{\numberline {2.1}IEEE 802.11ah Standrad}{6}
+\contentsline {subsection}{\numberline {2.1.1}Physical Layer of IEEE 802.11ah}{6}
+\contentsline {subsection}{\numberline {2.1.2}Medium Access Control layer of IEEE 802.11ah}{7}
+\contentsline {section}{\numberline {2.2}The Hidden Terminal Problem}{7}
+\contentsline {section}{\numberline {2.3}Physical Layer Network Coding}{9}
 \contentsline {section}{\numberline {2.4}Software Defined Radio}{10}
-\contentsline {chapter}{\numberline {3}Single Hop Transmission}{11}
-\contentsline {section}{\numberline {3.1}Related Works}{12}
-\contentsline {section}{\numberline {3.2}Rss-Based Grouping Strategy}{13}
-\contentsline {subsection}{\numberline {3.2.1}Overview}{13}
-\contentsline {subsection}{\numberline {3.2.2}System Model}{13}
-\contentsline {subsection}{\numberline {3.2.3}RSS-Based Grouping}{14}
-\contentsline {subsection}{\numberline {3.2.4}Implementation Issues}{16}
-\contentsline {subsection}{\numberline {3.2.5}Analytical Model}{16}
-\contentsline {section}{\numberline {3.3}Performance Evaluation}{21}
-\contentsline {chapter}{\numberline {4}Multi-Hop Transmission}{26}
-\contentsline {section}{\numberline {4.1}Implementation}{27}
-\contentsline {subsection}{\numberline {4.1.1}Signal formulation}{27}
-\contentsline {subsection}{\numberline {4.1.2}Timing recovery}{29}
-\contentsline {subsection}{\numberline {4.1.3}MA receiver, CFO estimation}{29}
-\contentsline {subsection}{\numberline {4.1.4}MA receiver, preamble detection}{30}
-\contentsline {section}{\numberline {4.2}Performance Evaluations}{31}
-\contentsline {subsection}{\numberline {4.2.1}Testbed Experiments}{31}
-\contentsline {subsubsection}{Experiment setting}{31}
-\contentsline {subsubsection}{BER, two-hop}{31}
-\contentsline {subsubsection}{Multi-hop performance}{33}
-\contentsline {subsection}{\numberline {4.2.2}Simulation Results}{34}
+\contentsline {subsection}{\numberline {2.4.1}Overview}{10}
+\contentsline {subsection}{\numberline {2.4.2}Universal Software Radio Peripheral}{12}
+\contentsline {subsection}{\numberline {2.4.3}GNURadio}{13}
+\contentsline {chapter}{\numberline {3}Grouping For Dense Wireless Access Networks}{14}
+\contentsline {section}{\numberline {3.1}Overview}{14}
+\contentsline {section}{\numberline {3.2}Related Works}{14}
+\contentsline {section}{\numberline {3.3}Rss-Based Grouping Strategy}{15}
+\contentsline {subsection}{\numberline {3.3.1}System Model}{15}
+\contentsline {subsection}{\numberline {3.3.2}RSS-Based Grouping}{16}
+\contentsline {subsection}{\numberline {3.3.3}Implementation Issues}{18}
+\contentsline {subsection}{\numberline {3.3.4}Analytical Model}{18}
+\contentsline {section}{\numberline {3.4}Performance Evaluation}{22}
+\contentsline {chapter}{\numberline {4}Multi-Hop Transmission}{27}
+\contentsline {section}{\numberline {4.1}Overview}{27}
+\contentsline {section}{\numberline {4.2}Implementation}{27}
+\contentsline {subsection}{\numberline {4.2.1}Signal formulation}{28}
+\contentsline {subsection}{\numberline {4.2.2}Timing recovery}{29}
+\contentsline {subsection}{\numberline {4.2.3}MA receiver, CFO estimation}{30}
+\contentsline {subsection}{\numberline {4.2.4}MA receiver, preamble detection}{31}
+\contentsline {section}{\numberline {4.3}Performance Evaluations}{31}
+\contentsline {subsection}{\numberline {4.3.1}Testbed Experiments}{32}
+\contentsline {subsubsection}{Experiment setting}{32}
+\contentsline {subsubsection}{BER, two-hop}{32}
+\contentsline {subsubsection}{Multi-hop performance}{32}
+\contentsline {subsection}{\numberline {4.3.2}Simulation Results}{34}
 \contentsline {subsubsection}{Goodput performance comparison}{34}
 \contentsline {subsubsection}{Effect of CFO on BER}{35}
-\contentsline {subsubsection}{Effect of Channel Estimation Error on BER}{36}
+\contentsline {subsubsection}{Effect of Channel Estimation Error on BER}{35}
 \contentsline {chapter}{\numberline {5}Conclusions}{37}
 \contentsline {chapter}{\numberline {A}Additional Information}{39}
 \contentsline {section}{\numberline {A.1}Installing out of tree modules on Mac OS}{39}
