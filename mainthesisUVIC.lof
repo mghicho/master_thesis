@@ -1,7 +1,7 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces A simple illustration of hidden terminal problem}}{8}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Simple three node linear network. Nodes $A$ and $B$ have packets to exchange and node $R$ acts as relay}}{9}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Simple three-node linear network. Nodes $A$ and $B$ have packets to exchange and node $R$ acts as a relay}}{9}
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Traditional relaying. First, node $A$ transmits its packet to the relay, then the relay forwards $A$'s packet to $B$, then in time slot three, node B sends its packet to the relay, which is then forwarded to node $A$ in time slot four.}}{10}
 \contentsline {figure}{\numberline {2.4}{\ignorespaces Straightforward network coding. First, $A$ transmits its packet to relay, then $B$ transmits its message to the relay, then relay calculates $Z_1=X_1 \oplus Y_1$ and broadcasts it to $A$ and $B$ in time slot three, which can then decode the other nodes message by another XOR.}}{11}
 \contentsline {figure}{\numberline {2.5}{\ignorespaces Physical layer network coding. In time slot one, $A$ and $B$ will transmit their packets to the relay at the same time (multiple access phase). The relay, using its mapping function extracts XOR of $A$ and $B$'s packets and broadcasts it to them in time slot two (broadcast phase).}}{11}
@@ -19,6 +19,6 @@
 \contentsline {figure}{\numberline {4.3}{\ignorespaces BER performance, two-hop.}}{34}
 \contentsline {figure}{\numberline {4.4}{\ignorespaces Multi-hop performance. Multi-hop End-to-End BER are calculated using formulations outlined in table 5.1 of \cite {zhang2017cross}.}}{34}
 \contentsline {figure}{\numberline {4.5}{\ignorespaces Goodput, per-hop SNR $=9$, $\alpha =4$, Payload=$256$ bits.}}{36}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Effect of CFO and channel estimation error on BER. }}{36}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Effect of CFO and channel estimation error on BER. }}{37}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

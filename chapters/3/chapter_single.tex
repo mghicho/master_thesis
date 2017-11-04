@@ -28,19 +28,19 @@ However, when the number of terminals is large, collecting global information si
 \subsection{System Model} \label{single:systemmodel}
 
 In this work, we consider an infrastructure based IEEE 802.11ah network, where each wireless terminal transmits its packets directly to the access point. %For simplicity, we only consider upload traffic from nodes to the access point, same as the in \cite{wu2006wsn02}. 
-The network coverage area is a circle with radius $R$ where the access point is at the center. Nodes are uniformly distributed in the circle and their locations follow a Poisson Point Process (PPP) with density $\lambda$. The latter two assumptions are used for analysis and they are not necessary for the algorithm to perform. Nodes are assumed to be static at their position which is a reasonable assumption for most IoT and sensor networks and an active node always has a packet to transmit. %Active nodes are assumed to have saturated traffic. % which means every node has always a packet to transmit.
+The network coverage area is a circle with radius $R$ where the access point is at the center. Nodes are uniformly distributed in the circle and their locations follow a Poisson Point Process (PPP) with density $\lambda$. The latter two assumptions are used for analysis and they are not necessary for the algorithm to perform. Nodes are assumed to be static at their positions which is a reasonable assumption for most IoT and sensor networks and an active node always has a packet to transmit. %Active nodes are assumed to have saturated traffic. % which means every node has always a packet to transmit.
 
 The channel model used in the analysis is a pathloss model with parameters $\alpha$ and $\beta$ in a way that the received power at a distance $d$ from the transmitter node is
 \begin{equation}
 P_r(d)=\frac{\beta}{d^\alpha} P_t,
 \end{equation}
-where $P_t$ is transmit power. In the simulation, we also consider the Rayleigh fast-fading and log-normal shadowing model where the received power is an exponential random variable and its mean $\bar{\gamma}$ is a log-normal random variable as 
+where $P_t$ is transmit power. In the simulation, we also consider the Rayleigh fast-fading and log-normal shadowing channel model where the received power is an exponential random variable and its mean $\bar{\gamma}$ is a log-normal random variable as 
 \begin{equation}
 \bar{\gamma}_{dB}= \mathcal{N}(10\log_{10}(P_r(d)),\sigma).
 \end{equation}
 
 %From a statistical geometric point of view, distance distribution of nodes in the same group is identical in all the schemes that are not location-based and nodes are uniformly distributed in a circle of size $A$. Therefore in this paper
-We refer to both centralized and distributed schemes used in \cite{zheng2014performance} as random grouping schemes. We also do not distinguish between RAW slot crossing and not crossing cases known as CR-GS-DCF and NCR-GS-DCF respectively which has negligible impact on the grouping decision \cite{Draft80211ah}. 
+We refer to both the centralized and distributed schemes used in \cite{zheng2014performance} as random grouping schemes. We also do not distinguish between RAW slot crossing and not crossing cases known as CR-GS-DCF and NCR-GS-DCF respectively which has negligible impact on the grouping decision \cite{Draft80211ah}. 
 
 \subsection{RSS-Based Grouping}
 \label{rssbasedmain}
@@ -74,7 +74,7 @@ At the end of last GST
 \caption{RSS-based grouping}
 \end{algorithm}
 
-A time diagram of the algorithm is illustrated in Fig. \ref{fig:diagram} and an example of Voronoi cells is shown in Fig. \ref{fig:samplevonoroli}.
+A time diagram of the algorithm is illustrated in Fig.~\ref{fig:diagram} and an example of Voronoi cells is shown in Fig.~\ref{fig:samplevonoroli}.
 
 
 \begin{figure*} [th]
@@ -90,22 +90,22 @@ A time diagram of the algorithm is illustrated in Fig. \ref{fig:diagram} and an 
 %Just like previous scheme 
 Groups are formed in Voronoi cells around group heads. Nodes will then remain in their selected RAW until another trigger from the AP.
 %This scheme does not have disadvantages of above mentioned scheme but it is not as distributed as other schemes.
-Comparing to centralized schemes studied in \cite{zheng2014performance} which want the AP to assign each node to a group, this scheme has a much lower control overhead and it does not require any location information to be collected and exchanged in the network.% but it has still more overhead than the aforementioned scheme (DAP).
+Comparing to the centralized schemes studied in \cite{zheng2014performance} which want the AP to assign each node to a group, this scheme has a much lower control overhead and it does not require any location information to be collected and exchanged in the network.% but it has still more overhead than the aforementioned scheme (DAP).
 
-In the rare case that a node is very far away from all the group heads, which means that it can not have any measurement for any GST, it will randomly choose one of the groups or it can report to the AP to be assigned to a group.
+In the rare case that a node is very far away from all the group heads, which means that it cannot have any measurement for any GST, it will randomly choose one group or it can report to the AP to be assigned to a group.
 %In the RSS-based grouping algorithm, it is mentioned that the pilot transmissions in GST should have a higher power than usual transmissions to prevent the case that a node cannot sense a signal in any GST.
  %which is again a case that can happen in DAP algorithm. Because of such unsolved issues about the first strategy we only study performance of RSS-based grouping scheme in this paper and compare it to other random schemes and optimum solution.
  
 
 
 \subsection{Implementation Issues}
-The proposed scheme can be readily implemented in current IEEE 802.11 systems without any major modifications. The power measurement already exists in the MAC layer of all systems and they can provide RSSI at any time, so nodes can then find the sensed power of each GST transmission by measuring the average RSSI during the reception time of the pilot. 
+The proposed scheme can be readily implemented in the current IEEE 802.11 systems without any major modifications. The power measurement already exists in the MAC layer of all systems and they can provide RSSI at any time, so nodes can then find the sensed power of each GST transmission by measuring the average RSSI during the reception time of the pilot. 
 
 GST can be as small as an ACK time and there should be some guard distance time between pilot transmissions from group heads. For the best performance, the optimum value of GUP and GST should be determined which is beyond the scope of this thesis and they do not affect our following analysis. The grouping can also be triggered by the AP if the randomly selected headers result in unsatisfactory network performance.
 
 Including $M$ in BF is something that is already being done in the IEEE standard draft \cite{Draft80211ah}. Informing group heads about their index can also be done using a mapping strategy similar to the one used for delivery traffic indication known as DTIM.
 
-Our algorithm is also robust against interference from other APs. Since the GSTs are short and they could be transmitted consecutively with a gap of SIFS, any other CSMA/CA based station, e.g. other APs, cannot transmit anything during the grouping procedure.
+Our algorithm is also robust against interference from other APs. Since the GSTs are short and they could be transmitted consecutively with a gap of SIFS, any other CSMA/CA based station, e.g., other APs, cannot transmit anything during the grouping procedure.
 
 \subsection{Analytical Model}
 
@@ -149,7 +149,7 @@ F_D(x) \approx \hat{F_D(x)} &=1-Pr[N(\pi x^2)=0 | N(A)=M] \\
 \end{split}
 \end{equation}
 %The probability that $x \geq R$ is neglected in the above CDF because it is very low.
-The validity of this approximation is then verified by simulation in Section \ref{single:evaluation}.
+The validity of this approximation is then verified by simulation in Section~\ref{single:evaluation}.
 
 We can find PDF of $D$ by taking derivative of its CDF:
 \begin{equation} \label{eq:pdf}
@@ -211,7 +211,7 @@ These probabilities can then be calculated by numerical methods.
 %The simulations used in this section are all done by MATLAB and NS-2\cite{breslau2000advances}.
 
 %The results in this section are produced 
-The performance of different grouping schemes is evaluated using MATLAB and NS-2\cite{breslau2000advances}. MATLAB is used for numerical calculations and NS-2 is used for throughput simulations. The network coverage is assumed to be a circle with radius $1$ km which is the case in sub 1GHz network having the access point at the center. As mentioned in Section \ref{single:systemmodel}, nodes are uniformly placed in the coverage area with their number following a Poisson distribution with density 0.0019 node per square meter which results in 6000 nodes in the network on average. The number of groups, M, was set in the range of 8 to 512. For each setting, the experiments were repeated 20 times, and the average was taken. 
+The performance of different grouping schemes is evaluated using MATLAB and NS-2\cite{breslau2000advances}. MATLAB is used for numerical calculations and NS-2 is used for throughput simulations. The network coverage is assumed to be a circle with radius $1$ km which is the case in sub 1GHz network having the access point at the center. As mentioned in Section~\ref{single:systemmodel}, nodes are uniformly placed in the coverage area with their number following a Poisson distribution with density 0.0019 node per square meter which results in 6000 nodes in the network on average. The number of groups, M, was set in the range of 8 to 512. For each setting, the experiments were repeated 20 times, and the average was taken. 
 
 %For each scheme the grouping is done 20 times and at each iteration an average is taken on all groups.
 
@@ -219,9 +219,9 @@ The performance of different grouping schemes is evaluated using MATLAB and NS-2
 
 If the AP the knows location information of all the nodes, in a pure centralized solution where AP decides the group for each node, the k-means algorithm can be used to achieve near-optimal groupings. So we can use the performance with k-means grouping as a benchmark to see how well our RSS-based distributed grouping algorithm is working compared with the centralized benchmark.
 
-In Fig. \ref{fig:meansum}, the average distance between nodes in a group for the proposed scheme is always smaller than with the random grouping scheme and close to the k-means clustering algorithm. It is also obvious that a larger number of groups have a smaller average distance between nodes for all algorithms. 
+In Fig.~\subref*{fig:meansum}, the average distance between nodes in a group for the proposed scheme is always smaller than with the random grouping scheme and close to the k-means clustering algorithm. It is also obvious that a larger number of groups have a smaller average distance between nodes for all algorithms. 
 
-In Fig. \ref{fig:variance}, we can see that the standard deviation of the number of nodes in different groups is the cost that the RSS-based grouping algorithm pays for the advantage of distributed solution. Groups with a large number of users will suffer from high collision probability and groups with a very small number of users may not fully utilize their RAW. It is shown later using NS-2 simulations, that despite having some dense groups, the RSS-based grouping algorithm has a better performance than random groupings. This is because the hidden node problem is a more severe problem than uneven groups. A few hidden terminals can dramatically decrease the performance of the whole network. Having more nodes that are all in the sensing range increases the competition but has a less destructive effect on the throughput than that due to hidden terminal.
+In Fig.~\subref*{fig:variance}, we can see that the standard deviation of the number of nodes in different groups is the cost that the RSS-based grouping algorithm pays for the advantage of distributed solution. Groups with a large number of users will suffer from high collision probability and groups with a very small number of users may not fully utilize their RAW. It is shown later using NS-2 simulations, that despite having some dense groups, the RSS-based grouping algorithm has a better performance than random groupings. This is because the hidden node problem is a more severe problem than uneven groups. A few hidden terminals can dramatically decrease the performance of the whole network. Having more nodes that are all in the sensing range increases the competition but has a less destructive effect on the throughput than that due to hidden terminal.
 
 
 
@@ -245,12 +245,12 @@ In Fig. \ref{fig:variance}, we can see that the standard deviation of the number
 \fi
 
 %Considering the higher transmission power and the receiving antenna gain at the AP side, we assume that the sensing distance between two user nodes may be equal to or smaller than the maximum transmission distance to the AP.
-Assuming that all nodes have the same sensing range, $R_s$, the probability of two random nodes in the same group be in their sensing range versus $R_s$ for a constant number of groups is shown in Fig. \ref{fig:prob}. The figure also shows that the approximation in (\ref{eq:cdf}) not affect the result very much. As we can see in the figure, best performance is for the clustering using the k-means algorithm but the RSS-based grouping scheme also performs very close to the k-means and much better than the random grouping schemes. The same probability assuming Rayleigh fading channel between nodes is also shown in Fig. \ref{fig:prob}. The performance with Rayleigh fading channels is degraded because considering fast fading the areas occupied by groups are no longer Voronoi and the group head with the highest sensed power is not necessarily the closest one. As shown in the figure the algorithm still performs well which indicates that, the RSS estimation accuracy required is low, which results in a small overhead.
+Assuming that all nodes have the same sensing range, $R_s$, the probability of two random nodes in the same group be in their sensing range versus $R_s$ for a constant number of groups is shown in Fig.~\subref*{fig:prob}. The figure also shows that the approximation in (\ref{eq:cdf}) not affect the result very much. As we can see in the figure, best performance is for the clustering using the k-means algorithm but the RSS-based grouping scheme also performs very close to the k-means and much better than the random grouping schemes. The same probability assuming Rayleigh fading channel between nodes is also shown in Fig.~\subref*{fig:prob}. The performance with Rayleigh fading channels is degraded because considering fast fading the areas occupied by groups are no longer Voronoi and the group head with the highest sensed power is not necessarily the closest one. As shown in the figure the algorithm still performs well which indicates that, the RSS estimation accuracy required is low, which results in a small overhead.
 
-With the simulation results following analytical results, our assumption in section \ref{single:systemmodel} is verified. The simulation and analytical results are closer to each other as M grows. That is because, with a higher value of M, the edge effect becomes more negligible.
+With the simulation results following analytical results, our assumption in section~\ref{single:systemmodel} is verified. The simulation and analytical results are closer to each other as M grows. That is because, with a higher value of M, the edge effect becomes more negligible.
 
 %the probability that a node's distance to its group head is larger that R becomes smaller.
-%Probability of having hidden terminal versus number of group for a constant range ,for avg-power based and random grouping schemes is shown in figure \ref{fig:prob2}
+%Probability of having hidden terminal versus number of group for a constant range ,for avg-power based and random grouping schemes is shown in figure \subref*{fig:prob2}
 
 \begin{figure} [th]
   \centering
@@ -271,7 +271,7 @@ With the simulation results following analytical results, our assumption in sect
   \label{fig:prob}
 \end{figure}
 \fi
-Fig. \ref{fig:prob2} shows the probability of two nodes in the same group being in each other's sensing range when all nodes' sensing range is fixed and the number of groups changes. This probability does not change with the number of groups for random grouping because nodes in the same group can still be anywhere in the coverage area and their distance still follows the same PDF. Though in case of the RSS-based grouping algorithm, a larger number of groups results in a higher probability for group members to be in the sensing range of each other because it makes the Voronoi cells smaller.    
+Fig.~\subref*{fig:prob2} shows the probability of two nodes in the same group being in each other's sensing range when all nodes' sensing range is fixed and the number of groups changes. This probability does not change with the number of groups for random grouping because nodes in the same group can still be anywhere in the coverage area and their distance still follows the same PDF. Though in case of the RSS-based grouping algorithm, a larger number of groups results in a higher probability for group members to be in the sensing range of each other because it makes the Voronoi cells smaller.    
 
 \iffalse
 \begin{figure} [th]
@@ -282,7 +282,7 @@ Fig. \ref{fig:prob2} shows the probability of two nodes in the same group being 
 \end{figure}
 \fi
 
-Fig. \ref{fig:throughput} shows the throughput simulation result for different grouping schemes along with k-means clustering algorithm using NS-2. Table \ref{table:throughput} shows the parameter setting for simulations used in this section. Other common settings such as PHY and MAC header are set according to the IEEE 802.11 standard \cite{wlan2011}. The payload size is set to be low considering the IoT applications such as smart meter measurement reporting and all nodes are using RTS/CTS mechanism. Only the uplink traffic is considered and a non-collided transmission is assumed to be successful which that means the PHY layer BER is not considered. 
+Fig.~\ref{fig:throughput} shows the throughput simulation result for different grouping schemes along with k-means clustering algorithm using NS-2. Table \ref{table:throughput} shows the parameter setting for simulations used in this section. Other common settings such as PHY and MAC header are set according to the IEEE 802.11 standard \cite{wlan2011}. The payload size is set to be low considering the IoT applications such as smart meter measurement reporting and all nodes are using RTS/CTS mechanism. Only the uplink traffic is considered and a non-collided transmission is assumed to be successful which that means the PHY layer BER is not considered. 
 
 \begin{figure} [th] 
   \centering
@@ -291,7 +291,7 @@ Fig. \ref{fig:throughput} shows the throughput simulation result for different g
   \label{fig:throughput}
 \end{figure}
 
- In Fig. \ref{fig:throughput}, the throughput for random scheme is very low because the time for a single packet transmission is more than the largest back off window (1024 slots) and almost any transmission would be interrupted when there is a few active nodes who are hidden terminals. In other words, \iffalse in a saturated traffic scenario, \fi a node with a hidden terminal may hardly success in transmitting a packet to the AP without collision.
+ In Fig.~\ref{fig:throughput}, the throughput for random scheme is very low because the time for a single packet transmission is more than the largest back off window (1024 slots) and almost any transmission would be interrupted when there is a few active nodes who are hidden terminals. In other words, \iffalse in a saturated traffic scenario, \fi a node with a hidden terminal may hardly success in transmitting a packet to the AP without collision.
 
 This figure also shows the limited cost that RSS-based grouping pays due to the higher standard deviation of number of nodes in each group. The throughput using the proposed RSS-based grouping is close to that using the centralized K-mean solution. On the other hand, random grouping has much worse performance due to the hidden terminal problem even when the sensing range is as high as 1500m. Note that the theoretical sensing range without considering the shadowing effect may be much higher than the practical sensing range, so grouping considering the location is important to avoid hidden terminal and improve network performance.
 

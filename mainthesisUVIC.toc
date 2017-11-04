@@ -30,7 +30,7 @@
 \contentsline {subsection}{\numberline {3.3.3}Implementation Issues}{18}
 \contentsline {subsection}{\numberline {3.3.4}Analytical Model}{18}
 \contentsline {section}{\numberline {3.4}Performance Evaluation}{22}
-\contentsline {chapter}{\numberline {4}Multi-Hop Transmission}{27}
+\contentsline {chapter}{\numberline {4}Multi-Hop Transmissions Using PNC}{27}
 \contentsline {section}{\numberline {4.1}Overview}{27}
 \contentsline {section}{\numberline {4.2}Implementation}{27}
 \contentsline {subsection}{\numberline {4.2.1}Signal formulation}{28}
@@ -43,18 +43,18 @@
 \contentsline {subsubsection}{BER, two-hop}{32}
 \contentsline {subsubsection}{Multi-hop performance}{32}
 \contentsline {subsection}{\numberline {4.3.2}Simulation Results}{34}
-\contentsline {subsubsection}{Goodput performance comparison}{34}
+\contentsline {subsubsection}{Goodput performance comparison}{35}
 \contentsline {subsubsection}{Effect of CFO on BER}{35}
-\contentsline {subsubsection}{Effect of Channel Estimation Error on BER}{35}
-\contentsline {chapter}{\numberline {5}Conclusions}{37}
-\contentsline {chapter}{\numberline {A}Additional Information}{39}
-\contentsline {section}{\numberline {A.1}Installing out of tree modules on Mac OS}{39}
-\contentsline {subsubsection}{How to find the above address?}{40}
-\contentsline {subsection}{\numberline {A.1.1}UHD commands}{40}
-\contentsline {subsection}{\numberline {A.1.2}Adding new modules to gnuradio in Mac OS}{40}
-\contentsline {subsection}{\numberline {A.1.3}Adding a library for linking}{41}
-\contentsline {subsection}{\numberline {A.1.4}OOT modules in Ubuntu}{41}
-\contentsline {subsection}{\numberline {A.1.5}Blocks with Multiple Inputs}{42}
-\contentsline {section}{\numberline {A.2}Working with \textit {tagged\_stream\_blocks}}{42}
-\contentsline {section}{\numberline {A.3}Positioning and Tabs with QT}{42}
-\contentsline {chapter}{Bibliography}{43}
+\contentsline {subsubsection}{Effect of Channel Estimation Error on BER}{36}
+\contentsline {chapter}{\numberline {5}Conclusions}{38}
+\contentsline {chapter}{\numberline {A}Troubleshooting GNURadio}{40}
+\contentsline {section}{\numberline {A.1}Installing out of tree modules on Mac OS}{40}
+\contentsline {subsubsection}{How to find the above address?}{41}
+\contentsline {subsection}{\numberline {A.1.1}UHD commands}{41}
+\contentsline {subsection}{\numberline {A.1.2}Adding new modules to gnuradio in Mac OS}{41}
+\contentsline {subsection}{\numberline {A.1.3}Adding a library for linking}{42}
+\contentsline {subsection}{\numberline {A.1.4}OOT modules in Ubuntu}{42}
+\contentsline {subsection}{\numberline {A.1.5}Blocks with Multiple Inputs}{43}
+\contentsline {section}{\numberline {A.2}Working with \textit {tagged\_stream\_blocks}}{43}
+\contentsline {section}{\numberline {A.3}Positioning and Tabs with QT}{43}
+\contentsline {chapter}{Bibliography}{44}
