@@ -40,12 +40,6 @@ B.~Chen, V.~Yenamandra, and K.~Srinivasan.
 \newblock Interference alignment using shadow channel.
 \newblock In {\em Proc. IEEE INFOCOM}, pages 2128--2136, April 2015.
 
-\bibitem{doppler2009device}
-Klaus Doppler, Mika Rinne, Carl Wijting, C{\'a}ssio~B Ribeiro, and Klaus Hugl.
-\newblock Device-to-device communication as an underlay to lte-advanced
-  networks.
-\newblock {\em IEEE Communications Magazine}, 47(12), 2009.
-
 \bibitem{fung2010preamble}
 Patrick Ho~Wang Fung, Sumei Sun, and Chin~Keong Ho.
 \newblock Preamble design for carrier frequency offset estimation in two-way
@@ -168,6 +162,24 @@ Sung-Guk Yoon, Jeong-O Seo, and Saewoong Bahk.
 Haoyuan Zhang.
 \newblock {\em Cross-layer design for multi-hop two-way relay network}.
 \newblock PhD thesis, 2017.
+
+\bibitem{zhang2017bi}
+Haoyuan Zhang and Lin Cai.
+\newblock Bi-directional multi-hop wireless pipeline using physical-layer
+  network coding.
+\newblock {\em IEEE Transactions on Wireless Communications}, 2017.
+
+\bibitem{zhang2017design2}
+Haoyuan Zhang and Lin Cai.
+\newblock Design of channel coded heterogeneous modulation physical layer
+  network coding.
+\newblock {\em IEEE Transactions on Vehicular Technology}, 2017.
+
+\bibitem{zhang2016design}
+Haoyuan Zhang, Lei Zheng, and Lin Cai.
+\newblock Design and analysis of heterogeneous physical layer network coding.
+\newblock {\em IEEE Transactions on Wireless Communications}, 15(4):2484--2497,
+  2016.
 
 \bibitem{zhang2006hot}
 Shengli Zhang, Soung~Chang Liew, and Patrick~P Lam.

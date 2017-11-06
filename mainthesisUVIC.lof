@@ -5,7 +5,8 @@
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Traditional relaying. First, node $A$ transmits its packet to the relay, then the relay forwards $A$'s packet to $B$, then in time slot three, node B sends its packet to the relay, which is then forwarded to node $A$ in time slot four.}}{10}
 \contentsline {figure}{\numberline {2.4}{\ignorespaces Straightforward network coding. First, $A$ transmits its packet to relay, then $B$ transmits its message to the relay, then relay calculates $Z_1=X_1 \oplus Y_1$ and broadcasts it to $A$ and $B$ in time slot three, which can then decode the other nodes message by another XOR.}}{11}
 \contentsline {figure}{\numberline {2.5}{\ignorespaces Physical layer network coding. In time slot one, $A$ and $B$ will transmit their packets to the relay at the same time (multiple access phase). The relay, using its mapping function extracts XOR of $A$ and $B$'s packets and broadcasts it to them in time slot two (broadcast phase).}}{11}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Simple illustration of software defined radio concept}}{12}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces PNC signal constellation at end nodes and the relay}}{12}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Simple illustration of software defined radio concept}}{13}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Time diagram of RSS-based grouping algorithm, $\text {Beacon}^{\ast }$ is a BF initiating the grouping scheme. As it is shown in the figure, a GUP can be as large as several beacon intervals. Essentially it can last as long as the AP is satisfied with the throughput performance.}}{17}
 \contentsline {figure}{\numberline {3.2}{\ignorespaces A sample grouping showing how nodes are categorized location-wise using RSS-based grouping}}{19}

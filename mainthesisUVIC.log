@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.6.9)  4 NOV 2017 12:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.6.9)  5 NOV 2017 20:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -601,15 +601,44 @@ File: figures/threeNodePnc.pdf Graphic file (type pdf)
 <use figures/threeNodePnc.pdf>
 Package pdftex.def Info: figures/threeNodePnc.pdf used on input line 66.
 (pdftex.def)             Requested size: 346.89732pt x 103.72964pt.
- [9 <./figures/justThreeNodes.pdf>] [10 <./figures/traditionalRelay.pdf>] [11 <
-./figures/straightforwardNC.pdf> <./figures/threeNodePnc.pdf>] <figures/sdr.pdf
-, id=95, 703.62875pt x 424.58624pt>
-File: figures/sdr.pdf Graphic file (type pdf)
+ [9 <./figures/justThreeNodes.pdf>]
+<figures/bpsk_constellation_tx.pdf, id=80, 130.4875pt x 108.405pt>
+File: figures/bpsk_constellation_tx.pdf Graphic file (type pdf)
 
-<use figures/sdr.pdf>
-Package pdftex.def Info: figures/sdr.pdf used on input line 85.
+<use figures/bpsk_constellation_tx.pdf>
+Package pdftex.def Info: figures/bpsk_constellation_tx.pdf used on input line 7
+4.
+(pdftex.def)             Requested size: 108.405pt x 90.06047pt.
+
+Underfull \hbox (badness 4886) in paragraph at lines 74--74
+[]\OT1/cmr/m/n/10 (a) |BPSK trans-mit-ter
+ []
+
+<figures/pnc_constellation_ideal.pdf, id=81, 220.825pt x 108.405pt>
+File: figures/pnc_constellation_ideal.pdf Graphic file (type pdf)
+
+<use figures/pnc_constellation_ideal.pdf>
+Package pdftex.def Info: figures/pnc_constellation_ideal.pdf used on input line
+ 75.
+(pdftex.def)             Requested size: 173.44534pt x 85.14937pt.
+
+<figures/pnc_constellation_phase.pdf, id=82, 220.825pt x 108.405pt>
+File: figures/pnc_constellation_phase.pdf Graphic file (type pdf)
+
+<use figures/pnc_constellation_phase.pdf>
+Package pdftex.def Info: figures/pnc_constellation_phase.pdf used on input line
+ 76.
+(pdftex.def)             Requested size: 173.44534pt x 85.14937pt.
+ [10 <./figures/traditionalRelay.pdf>] [11 <./figures/straightforwardNC.pdf> <.
+/figures/threeNodePnc.pdf>]
+<figures/sdr.pdf, id=98, 703.62875pt x 424.58624pt>
+File: figures/sdr.pdf Graphic file (type pdf)
+ <use figures/sdr.pdf>
+Package pdftex.def Info: figures/sdr.pdf used on input line 93.
 (pdftex.def)             Requested size: 346.89732pt x 209.32536pt.
- [12 <./figures/sdr.pdf>]) [13]
+
+[12 <./figures/bpsk_constellation_tx.pdf> <./figures/pnc_constellation_ideal.pd
+f> <./figures/pnc_constellation_phase.pdf>]) [13 <./figures/sdr.pdf>]
 \openout2 = `chapters/3/chapter_single.aux'.
 
 
@@ -631,7 +660,7 @@ ted-to.pdf figures/diagram.eps>
 (epstopdf)             \includegraphics on input line 82.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/diagram-eps-converted-to.pdf, id=116, 845.1575pt x 230.8625pt>
+<figures/diagram-eps-converted-to.pdf, id=130, 845.1575pt x 230.8625pt>
 File: figures/diagram-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/diagram-eps-converted-to.pdf>
@@ -651,7 +680,7 @@ s-converted-to.pdf figures/sample_vonoroli.eps>
 (epstopdf)             \includegraphics on input line 114.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/sample_vonoroli-eps-converted-to.pdf, id=141, 826.08624pt x 588.1975pt
+<figures/sample_vonoroli-eps-converted-to.pdf, id=155, 826.08624pt x 588.1975pt
 >
 File: figures/sample_vonoroli-eps-converted-to.pdf Graphic file (type pdf)
  <use figures/sample_vonoroli-eps-converted-to.pdf>
@@ -676,7 +705,7 @@ d-to.pdf figures/webb2.eps>
 (epstopdf)             \includegraphics on input line 161.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/webb2-eps-converted-to.pdf, id=155, 412.54124pt x 317.185pt>
+<figures/webb2-eps-converted-to.pdf, id=169, 412.54124pt x 317.185pt>
 File: figures/webb2-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/webb2-eps-converted-to.pdf>
@@ -696,7 +725,7 @@ converted-to.pdf figures/final_metric1.eps>
 (epstopdf)             \includegraphics on input line 231.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/final_metric1-eps-converted-to.pdf, id=170, 826.08624pt x 588.1975pt>
+<figures/final_metric1-eps-converted-to.pdf, id=184, 826.08624pt x 588.1975pt>
 File: figures/final_metric1-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/final_metric1-eps-converted-to.pdf>
@@ -715,7 +744,7 @@ converted-to.pdf figures/final_metric2.eps>
 (epstopdf)             \includegraphics on input line 233.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/final_metric2-eps-converted-to.pdf, id=171, 826.08624pt x 588.1975pt>
+<figures/final_metric2-eps-converted-to.pdf, id=185, 826.08624pt x 588.1975pt>
 File: figures/final_metric2-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/final_metric2-eps-converted-to.pdf>
@@ -736,7 +765,7 @@ fixedM-eps-converted-to.pdf figures/final_probability_fixedM.eps>
 (epstopdf)             \includegraphics on input line 258.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/final_probability_fixedM-eps-converted-to.pdf, id=193, 826.08624pt x 5
+<figures/final_probability_fixedM-eps-converted-to.pdf, id=205, 826.08624pt x 5
 88.1975pt>
 File: figures/final_probability_fixedM-eps-converted-to.pdf Graphic file (type 
 pdf)
@@ -758,7 +787,7 @@ s>
 (epstopdf)             \includegraphics on input line 260.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/final_probablity_fixedR_analysis-eps-converted-to.pdf, id=194, 826.086
+<figures/final_probablity_fixedR_analysis-eps-converted-to.pdf, id=206, 826.086
 24pt x 588.1975pt>
 File: figures/final_probablity_fixedR_analysis-eps-converted-to.pdf Graphic fil
 e (type pdf)
@@ -780,7 +809,7 @@ verted-to.pdf figures/throughput.eps>
 (epstopdf)             \includegraphics on input line 289.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/throughput-eps-converted-to.pdf, id=211, 826.08624pt x 588.1975pt>
+<figures/throughput-eps-converted-to.pdf, id=223, 826.08624pt x 588.1975pt>
 File: figures/throughput-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/throughput-eps-converted-to.pdf>
@@ -814,7 +843,7 @@ nverted-to.pdf figures/pncreceiver.eps>
 (epstopdf)             \includegraphics on input line 71.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/pncreceiver-eps-converted-to.pdf, id=237, 812.03375pt x 234.8775pt>
+<figures/pncreceiver-eps-converted-to.pdf, id=249, 812.03375pt x 234.8775pt>
 File: figures/pncreceiver-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/pncreceiver-eps-converted-to.pdf>
@@ -833,7 +862,7 @@ ted-to.pdf figures/testbed.eps>
 (epstopdf)             \includegraphics on input line 196.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/testbed-eps-converted-to.pdf, id=247, 2457.18pt x 2457.18pt>
+<figures/testbed-eps-converted-to.pdf, id=259, 2457.18pt x 2457.18pt>
 File: figures/testbed-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/testbed-eps-converted-to.pdf>
@@ -852,7 +881,7 @@ f>
 (epstopdf)             \includegraphics on input line 216.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/BER_Payload_MA-eps-converted-to.pdf, id=248, 578.16pt x 433.62pt>
+<figures/BER_Payload_MA-eps-converted-to.pdf, id=260, 578.16pt x 433.62pt>
 File: figures/BER_Payload_MA-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/BER_Payload_MA-eps-converted-to.pdf>
@@ -871,7 +900,7 @@ s-converted-to.pdf figures/BER_Payload_e2e.eps>
 (epstopdf)             \includegraphics on input line 217.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/BER_Payload_e2e-eps-converted-to.pdf, id=249, 578.16pt x 433.62pt>
+<figures/BER_Payload_e2e-eps-converted-to.pdf, id=261, 578.16pt x 433.62pt>
 File: figures/BER_Payload_e2e-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/BER_Payload_e2e-eps-converted-to.pdf>
@@ -889,7 +918,7 @@ to.pdf figures/cdf.eps>
 (epstopdf)             \includegraphics on input line 218.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/cdf-eps-converted-to.pdf, id=250, 578.16pt x 433.62pt>
+<figures/cdf-eps-converted-to.pdf, id=262, 578.16pt x 433.62pt>
 File: figures/cdf-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/cdf-eps-converted-to.pdf>
@@ -911,7 +940,7 @@ Package epstopdf Info: Source file: <figures/ber_bar_160.eps>
 nverted-to.pdf figures/ber_bar_160.eps>
 (epstopdf)             \includegraphics on input line 228.
 Package epstopdf Info: Output file is already uptodate.
-<figures/ber_bar_160-eps-converted-to.pdf, id=251, 578.16pt x 433.62pt>
+<figures/ber_bar_160-eps-converted-to.pdf, id=263, 578.16pt x 433.62pt>
 File: figures/ber_bar_160-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/ber_bar_160-eps-converted-to.pdf>
@@ -929,7 +958,7 @@ verted-to.pdf figures/th_bar_160.eps>
 (epstopdf)             \includegraphics on input line 229.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/th_bar_160-eps-converted-to.pdf, id=252, 578.16pt x 433.62pt>
+<figures/th_bar_160-eps-converted-to.pdf, id=264, 578.16pt x 433.62pt>
 File: figures/th_bar_160-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/th_bar_160-eps-converted-to.pdf>
@@ -952,7 +981,7 @@ verted-to.pdf>
 (epstopdf)             \includegraphics on input line 330.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/sim_th_alpha4_snrh2h9BL256-eps-converted-to.pdf, id=293, 578.16pt x 43
+<figures/sim_th_alpha4_snrh2h9BL256-eps-converted-to.pdf, id=305, 578.16pt x 43
 3.62pt>
 File: figures/sim_th_alpha4_snrh2h9BL256-eps-converted-to.pdf Graphic file (typ
 e pdf)
@@ -972,7 +1001,7 @@ Package epstopdf Info: Source file: <figures/cfo2.eps>
 (epstopdf)             \includegraphics on input line 358.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/cfo2-eps-converted-to.pdf, id=297, 578.16pt x 433.62pt>
+<figures/cfo2-eps-converted-to.pdf, id=309, 578.16pt x 433.62pt>
 File: figures/cfo2-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/cfo2-eps-converted-to.pdf>
@@ -991,7 +1020,7 @@ f>
 (epstopdf)             \includegraphics on input line 359.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/locations2_new-eps-converted-to.pdf, id=298, 578.16pt x 433.62pt>
+<figures/locations2_new-eps-converted-to.pdf, id=310, 578.16pt x 433.62pt>
 File: figures/locations2_new-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/locations2_new-eps-converted-to.pdf>
@@ -1092,10 +1121,10 @@ Overfull \hbox (46.38487pt too wide) in paragraph at lines 125--126
 (./chapters/3/chapter_single.aux) (./chapters/4/chapter_multi.aux)
 (./chapters/7/chapter_conclusion.aux) (./chapters/appendix/chapter_app.aux)) ) 
 Here is how much of TeX's memory you used:
- 7435 strings out of 493109
- 109485 string characters out of 6135011
- 212729 words of memory out of 5000000
- 10654 multiletter control sequences out of 15000+600000
+ 7452 strings out of 493109
+ 110077 string characters out of 6135011
+ 212748 words of memory out of 5000000
+ 10668 multiletter control sequences out of 15000+600000
  14617 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  40i,18n,49p,1280b,1442s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1116,10 +1145,10 @@ ve/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/
 014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/201
 4/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2014
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on mainthesisUVIC.pdf (57 pages, 1855189 bytes).
+Output written on mainthesisUVIC.pdf (57 pages, 1864696 bytes).
 PDF statistics:
- 408 PDF objects out of 1000 (max. 8388607)
- 265 compressed objects within 3 object streams
+ 420 PDF objects out of 1000 (max. 8388607)
+ 274 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 121 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 136 words of extra memory for PDF output out of 10000 (max. 10000000)
 

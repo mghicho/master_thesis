@@ -2,9 +2,9 @@ This is BibTeX, Version 0.99d (TeX Live 2014)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: mainthesisUVIC.aux
 A level-1 auxiliary file: chapters/1/chapter_intro.aux
+A level-1 auxiliary file: chapters/2/chapter_background.aux
 A level-1 auxiliary file: chapters/3/chapter_single.aux
 A level-1 auxiliary file: chapters/4/chapter_multi.aux
-A level-1 auxiliary file: chapters/6/chapter_evaluation.aux
 A level-1 auxiliary file: chapters/7/chapter_conclusion.aux
 A level-1 auxiliary file: chapters/appendix/chapter_app.aux
 The style file: plain.bst
@@ -18,45 +18,45 @@ Warning--empty year in Draft80211ah
 Warning--empty journal in Req80211ah
 Warning--empty year in Req80211ah
 Warning--empty school in zhang2017cross
-You've used 31 entries,
+You've used 33 entries,
             2118 wiz_defined-function locations,
-            683 strings with 10017 characters,
-and the built_in function-call counts, 12328 in all, are:
-= -- 1226
-> -- 611
+            688 strings with 10192 characters,
+and the built_in function-call counts, 12848 in all, are:
+= -- 1281
+> -- 627
 < -- 12
-+ -- 243
-- -- 210
-* -- 900
-:= -- 1965
-add.period$ -- 95
-call.type$ -- 31
-change.case$ -- 195
++ -- 249
+- -- 214
+* -- 928
+:= -- 2054
+add.period$ -- 101
+call.type$ -- 33
+change.case$ -- 203
 chr.to.int$ -- 0
-cite$ -- 38
-duplicate$ -- 467
-empty$ -- 927
-format.name$ -- 210
-if$ -- 2615
+cite$ -- 40
+duplicate$ -- 488
+empty$ -- 972
+format.name$ -- 214
+if$ -- 2723
 int.to.chr$ -- 0
-int.to.str$ -- 31
-missing$ -- 30
-newline$ -- 154
-num.names$ -- 60
-pop$ -- 213
+int.to.str$ -- 33
+missing$ -- 32
+newline$ -- 164
+num.names$ -- 64
+pop$ -- 221
 preamble$ -- 1
-purify$ -- 166
+purify$ -- 172
 quote$ -- 0
-skip$ -- 352
+skip$ -- 367
 stack$ -- 0
-substring$ -- 806
-swap$ -- 136
+substring$ -- 847
+swap$ -- 138
 text.length$ -- 12
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 122
+type$ -- 130
 warning$ -- 7
-while$ -- 120
-width$ -- 33
-write$ -- 340
+while$ -- 126
+width$ -- 35
+write$ -- 360
 (There were 8 warnings)
